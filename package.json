@@ -1,0 +1,12 @@
+{
+  "name": "goodjasonblog",
+  "version": "1.0.0",
+  "description": "建利技術部落格專案 使用vue press",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "author": "jasonchang",
+  "license": "MIT"
+}
