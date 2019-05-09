@@ -10,6 +10,25 @@ module.exports = {
     ['link', { rel: 'icon', href: '/favicon.ico' }], // 增加一个自定义的 favicon(网页标签的图标)
   ],
   base: '/', // 部屬到github相關設定
+  themeConfig: {
+    nav: [
+      { text: '首頁', link: '/' },
+      { text: '前端技術', link: '/articles/' },
+      { text: '關於演算法大小事', link: '/algorithm/' },
+      { text: '關於我', link: '/about' },
+    ],
+    idebar: [
+      '/',
+      '/about/',
+      {
+        title: 'Group 1',
+        collapsable: false,
+        children: [
+          '/guide/'
+        ]
+      }
+    ]
+  },
   markdown: {
     anchor: { permalink: true }, // 文件內部連結。
     lineNumbers: false, // 程式碼區塊是否顯示行號
