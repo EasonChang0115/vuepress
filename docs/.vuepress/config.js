@@ -1,3 +1,4 @@
+var sideconfig = require('./sideconfig');
 module.exports = {
   base: '/', // 部署到DNS下的路徑
   title: 'GoodJason Lit', // 網站的標題
@@ -19,8 +20,8 @@ module.exports = {
       { text: '關於我', link: '/about' },
     ],
     sidebar: {
-      '/articles/': articlesSidebarConfig('前端技術'), // 设置侧边栏的链接目录、文字和函数名。
-      '/algorithm/': algorithmSidebarConfig('演算法大小事'), // 设置侧边栏的链接目录、文字和函数名。
+      '/articles/': sideconfig.articlesSidebarConfig('前端技術'), // 设置侧边栏的链接目录、文字和函数名。
+      '/algorithm/': sideconfig.algorithmSidebarConfig('演算法大小事'), // 设置侧边栏的链接目录、文字和函数名。
       '/': [
         'about'    /* /about.html */
       ]
@@ -28,34 +29,11 @@ module.exports = {
   },
   markdown: {
     anchor: { permalink: true }, // 文件內部連結。
-    lineNumbers: false, // 程式碼區塊是否顯示行號
+    lineNumbers: true, // 程式碼區塊是否顯示行號
     toc: { includeLevel: [2, 3] }, // 目錄顯示標題的層級
     // config: md => { // 外部插件设置：markdown-it-plugin。
     //   md.set({ breaks: true })
     //   md.use(require('markdown-it-xxx')) // 使用 xxx 插件。
     // }
   },
-}
-function articlesSidebarConfig (title) {
-  return [
-    { title,
-      collapsable: false,
-      children: [
-        '',
-        'javascript/',
-        'css/'
-      ]
-    }
-  ]
-}
-function algorithmSidebarConfig (title) {
-  return [
-    { title,
-      collapsable: false,
-      children: [
-        '',
-        'bazier',
-      ]
-    }
-  ]
 }
