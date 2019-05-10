@@ -33,7 +33,7 @@ body {
   height: $navbarHeight;
   background-color: #fff;
   box-sizing: border-box;
-  border-bottom: 1px solid $borderColor;
+  box-shadow: 0 4px 12px 0 rgba(38,39,39,0.08);
 }
 
 .sidebar-mask {

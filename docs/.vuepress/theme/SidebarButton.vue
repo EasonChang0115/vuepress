@@ -24,7 +24,7 @@
   height: 1.25rem;
   position: absolute;
   padding: 0.6rem;
-  top: 0.6rem;
+  top: 1.25rem;
   left: 1rem;
   cursor: pointer;
   .icon {

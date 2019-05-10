@@ -85,12 +85,11 @@ function css(el, property) {
 <style lang="scss">
 @import "./styles/config.scss";
 
-$navbar-vertical-padding: 0.7rem;
-$navbar-horizontal-padding: 1.5rem;
+$navbar-vertical-padding: 1.2rem;
+$navbar-horizontal-padding: 1.2rem;
 
 .navbar {
   padding: $navbar-vertical-padding $navbar-horizontal-padding;
-  line-height: $navbarHeight - 1.4rem;
   position: relative;
   a,
   span,
@@ -98,7 +97,7 @@ $navbar-horizontal-padding: 1.5rem;
     display: inline-block;
   }
   .logo {
-    height: $navbarHeight - 1.4rem;
+    height: $navbarHeight - 2.2rem;
     min-width: $navbarHeight - 1.4rem;
     margin-right: 0.8rem;
     vertical-align: top;
@@ -108,13 +107,16 @@ $navbar-horizontal-padding: 1.5rem;
     font-weight: 600;
     color: $textColor;
     position: relative;
+    &.can-hide {
+      display: none;
+    }
   }
   .links {
     padding-left: 1.5rem;
     box-sizing: border-box;
     background-color: white;
     white-space: nowrap;
-    font-size: 0.9rem;
+    font-size: 1rem;
     position: absolute;
     right: $navbar-horizontal-padding;
     top: $navbar-vertical-padding;

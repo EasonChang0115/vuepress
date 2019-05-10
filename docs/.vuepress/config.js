@@ -1,8 +1,8 @@
 var sideconfig = require('./sideconfig');
 module.exports = {
   base: '/', // 部署到DNS下的路徑
-  title: 'GoodJason Lit', // 網站的標題
-  description: '分享、關注技術，創造自我價值', // 網站的描述 會以meta渲染到當前的頁面中
+  title: 'GoodHAO Lit', // 網站的標題
+  description: '紀錄、關注及靈活運用技術，創造自我價值', // 網站的描述 會以meta渲染到當前的頁面中
   serviceWorker: true, // 輕PWA 會緩存訪問過的頁面 用於離線瀏覽(若需要 可以在 public 生成 Manifest 和 icons)
   //ga: 'UA-123456789-0', 
   port: '8000', // 開發指定的Port。
@@ -12,6 +12,7 @@ module.exports = {
   ],
   sidebarDepth: 2,
   themeConfig: {
+    logo: 'logo.png',
     perosnal: {
       name: 'Eason'
     },
@@ -24,9 +25,6 @@ module.exports = {
     sidebar: {
       '/articles/': sideconfig.articlesSidebarConfig('前端技術'), // 设置侧边栏的链接目录、文字和函数名。
       '/algorithm/': sideconfig.algorithmSidebarConfig('演算法大小事'), // 设置侧边栏的链接目录、文字和函数名。
-      '/': [
-        'about'    /* /about.html */
-      ]
     }
   },
   markdown: {
