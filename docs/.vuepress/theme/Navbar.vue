@@ -86,7 +86,7 @@ function css(el, property) {
 @import "./styles/config.scss";
 
 $navbar-vertical-padding: 1.2rem;
-$navbar-horizontal-padding: 1.2rem;
+$navbar-horizontal-padding: 2.5rem;
 
 .navbar {
   padding: $navbar-vertical-padding $navbar-horizontal-padding;
@@ -134,6 +134,7 @@ $navbar-horizontal-padding: 1.2rem;
 @media (max-width: $MQMobile) {
   .navbar {
     padding-left: 4rem;
+    padding-right: 1.2rem;
     .can-hide {
       display: none;
     }

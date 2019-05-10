@@ -49,7 +49,6 @@ export default {
       required: true
     }
   },
-
   methods: {
     toggle() {
       this.open = !this.open;
@@ -75,6 +74,7 @@ export default {
     }
   }
   .nav-dropdown {
+    transition: .3s;
     .dropdown-item {
       color: inherit;
       line-height: 1.7rem;
@@ -91,6 +91,7 @@ export default {
         }
       }
       a {
+        transition: .3s;
         display: block;
         line-height: 1.7rem;
         position: relative;
@@ -100,6 +101,7 @@ export default {
         padding: 0 1.5rem 0 1.25rem;
         &:hover {
           color: $accentColor;
+          background-color: rgba($arrowBgColor, 0.1);
         }
         &.router-link-active {
           color: $accentColor;
@@ -176,13 +178,36 @@ export default {
       top: 100%;
       right: 0;
       background-color: #fff;
-      padding: 0.6rem 0;
+      padding: 0;
       border: 1px solid #ddd;
       border-bottom-color: #ccc;
       text-align: left;
       border-radius: 0.25rem;
       white-space: nowrap;
       margin: 0;
+      .dropdown-item {
+        a {
+          padding: 1rem 2rem;
+          position: relative;
+          box-shadow: inset 0 -1px 0 0 #f7f6f6;
+          &:hover {
+            &:before {
+              width: 5px;
+            }
+          }
+          &::before {
+            transition: .3s;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0px;
+            background-color: #4FC6DB;
+          }
+        }
+      }
+      
     }
   }
 }

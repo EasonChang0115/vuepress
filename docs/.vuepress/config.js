@@ -8,11 +8,19 @@ module.exports = {
   port: '8000', // 開發指定的Port。
   dist: '.vuepress/dist', // build 後輸出的目錄 預設為 .vuepress/dist
   head: [ // HTML <head>
-    ['link', { rel: 'icon', href: '/favicon.ico' }], 
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', {
+        rel: 'stylesheet', 
+        href: 'https://use.fontawesome.com/releases/v5.8.2/css/all.css',
+        integrity: 'sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay',
+        crossorigin: 'anonymous'
+      }
+    ]
   ],
   sidebarDepth: 2,
   themeConfig: {
     logo: 'logo.png',
+    repo: 'EasonChang0115/vuepress',
     perosnal: {
       name: 'Eason'
     },
@@ -20,7 +28,12 @@ module.exports = {
       { text: '首頁', link: '/' },
       { text: '前端技術', link: '/articles/' },
       { text: '演算法大小事', link: '/algorithm/' },
-      { text: '關於我', link: '/about' },
+      { text: '關於我', items: [
+        { text: 'GitHub', link: 'https://github.com/EasonChang0115', icon: 'fab fa-facebook'},
+        { text: 'Facebook', link: 'https://www.facebook.com/EasonChang0115', icon: 'fab fa-github' },
+        { text: 'CodePen', link: 'https://codepen.io/JasonChang/', icon: 'fab fa-codepen' },
+      ]},
+      
     ],
     sidebar: {
       '/articles/': sideconfig.articlesSidebarConfig('前端技術'), // 设置侧边栏的链接目录、文字和函数名。

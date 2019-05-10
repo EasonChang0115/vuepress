@@ -7,8 +7,8 @@
     :target="isMailto(link) || isTel(link) ? null : '_blank'"
     :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'"
   >
+    <i :class="item.icon"></i>
     {{ item.text }}
-    <OutboundLink/>
   </a>
 </template>
 
