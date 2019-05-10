@@ -12,6 +12,9 @@ module.exports = {
   ],
   sidebarDepth: 2,
   themeConfig: {
+    perosnal: {
+      name: 'Eason'
+    },
     nav: [
       { text: '首頁', link: '/' },
       { text: '前端技術', link: '/articles/' },

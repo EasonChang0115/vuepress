@@ -30,6 +30,7 @@ import NavLink from "./NavLink.vue";
 export default {
   components: { NavLink },
   mounted() {
+    console.log(this.data);
     console.log(this.$page);
     console.log(this.$site);
     console.log(this.$title);
