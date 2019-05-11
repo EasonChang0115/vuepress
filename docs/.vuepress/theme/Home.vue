@@ -1,11 +1,19 @@
 <template>
   <div class="home">
     <div class="hero">
-      <img v-if="data.heroImage" :src="$withBase(data.heroImage)" alt="hero">
-      <h1>{{ data.heroText || $title || 'Hello' }}</h1>
+      <div class="bgImg" :style="{backgroundImage: `url('${$withBase(data.heroImage)}')`}"></div>
 
-      <p class="description">{{ data.tagline || $description || 'Welcome to your VuePress site' }}</p>
+      <div class="welcome-text">
+        <div class="imgbox">
+          <img v-if="data.heroImage" class="personalPhoto" :src="$withBase($site.themeConfig.personal.photo)" alt="hero">
+        </div>
+        <div class="slogan">
+          <h1>{{ data.heroText || $title || 'Hello' }}</h1>
+          <p class="description">{{ data.tagline || $description || 'Welcome to your VuePress site' }}</p>
+        </div>
+      </div>
 
+  
       <p class="action" v-if="data.actionText && data.actionLink">
         <NavLink class="action-button" :item="actionLink"/>
       </p>
@@ -57,32 +65,67 @@ export default {
   padding: $navbarHeight 2rem 0;
   max-width: 960px;
   margin: 0px auto;
-
+  
   .hero {
+    position: relative;
     text-align: center;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    min-height: 25rem;
 
-    img {
-      max-width: 100%;
-      max-height: 280px;
-      display: block;
-      margin: 3rem auto 1.5rem;
+    .bgImg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.9;
+      filter: blur(1px);
+      z-index: -1;
+    }
+    
+    
+    .welcome-text {
+      position: absolute;
+      bottom: -3rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .imgbox {
+        position: relative;
+        width: 120px;
+        height: 130px;
+        border-radius: 50%;
+        border: 1px solid $accentColor;
+        overflow: hidden;
+        img.personalPhoto {
+          width: 100%;
+        }
+      }
     }
 
     h1 {
       font-size: 3rem;
+      margin: 1.2rem 1rem 0;
+      text-align: left;
+      text-shadow:  black 0.1em 0.1em 0.2em;
+      color: #eeeeee;
     }
 
-    h1,
     .description,
     .action {
-      margin: 1.8rem auto;
+      margin: 0.8rem 1rem 1.2rem 1rem;
     }
 
     .description {
       max-width: 35rem;
-      font-size: 1.6rem;
+      font-size: 1rem;
       line-height: 1.3;
-      color: lighten($textColor, 40%);
+      color: $textColor;
     }
 
     .action-button {
@@ -91,7 +134,6 @@ export default {
       color: #fff;
       background-color: $accentColor;
       padding: 0.8rem 1.6rem;
-      border-radius: 4px;
       transition: background-color 0.1s ease;
       box-sizing: border-box;
       border-bottom: 1px solid darken($accentColor, 10%);
@@ -141,6 +183,13 @@ export default {
 
 @media (max-width: $MQMobile) {
   .home {
+    .welcome-text {
+      flex-direction: column;
+      h1 {
+        text-align: center;
+      }
+    }
+
     .features {
       flex-direction: column;
     }
@@ -158,15 +207,6 @@ export default {
     padding-right: 1.5rem;
 
     .hero {
-      img {
-        max-height: 210px;
-        margin: 2rem auto 1.2rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
       h1,
       .description,
       .action {
@@ -175,6 +215,7 @@ export default {
 
       .description {
         font-size: 1.2rem;
+        margin: 1.2rem 1rem;
       }
 
       .action-button {
