@@ -12,6 +12,7 @@
       @keyup.enter="go(focusIndex)"
       @keyup.up="onUp"
       @keyup.down="onDown"
+      placeholder="search"
     >
     <ul
       class="suggestions"
@@ -44,12 +45,10 @@ export default {
       focusIndex: 0
     };
   },
-
   computed: {
     showSuggestions() {
       return this.focused && this.suggestions && this.suggestions.length;
     },
-
     suggestions() {
       const query = this.query.trim().toLowerCase();
       if (!query) {
@@ -88,7 +87,6 @@ export default {
       }
       return res;
     },
-
     // make suggestions align right when there are not enough items
     alignRight() {
       const navCount = (this.$site.themeConfig.nav || []).length;
@@ -96,7 +94,6 @@ export default {
       return navCount + repo <= 2;
     }
   },
-
   methods: {
     getPageLocalePath(page) {
       for (const localePath in this.$site.locales || {}) {
@@ -106,7 +103,6 @@ export default {
       }
       return "/";
     },
-
     onUp() {
       if (this.showSuggestions) {
         if (this.focusIndex > 0) {
@@ -116,7 +112,6 @@ export default {
         }
       }
     },
-
     onDown() {
       if (this.showSuggestions) {
         if (this.focusIndex < this.suggestions.length - 1) {
@@ -126,7 +121,6 @@ export default {
         }
       }
     },
-
     go(i) {
       if (!this.showSuggestions) {
         return;
@@ -135,11 +129,9 @@ export default {
       this.query = "";
       this.focusIndex = 0;
     },
-
     focus(i) {
       this.focusIndex = i;
     },
-
     unfocus() {
       this.focusIndex = -1;
     }
@@ -155,22 +147,24 @@ export default {
   position: relative;
   margin-right: 1rem;
   input {
+    border: 1px solid #e4e4e4;
     cursor: text;
     width: 10rem;
     color: lighten($textColor, 25%);
     display: inline-block;
-    border: 1px solid darken($borderColor, 10%);
-    border-radius: 2rem;
+    border-radius: 0.2rem;
     font-size: 0.9rem;
     line-height: 2rem;
     padding: 0 0.5rem 0 2rem;
     outline: none;
     transition: all 0.2s ease;
-    background: #fff url(./search.svg) 0.6rem 0.5rem no-repeat;
+    background: #f9f9f9 url(./search.svg) 0.6rem 0.5rem no-repeat;
     background-size: 1rem;
     &:focus {
       cursor: auto;
-      border-color: $accentColor;
+      border: none;
+      background-color: white;
+      box-shadow: 0 1px 1px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
     }
   }
   .suggestions {
@@ -238,6 +232,7 @@ export default {
 @media (max-width: $MQMobile) {
   .search-box {
     margin-right: 0;
+    top: 0.3rem;
     input {
       left: 1rem;
     }

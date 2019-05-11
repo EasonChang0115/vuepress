@@ -176,7 +176,7 @@ export default {
       overflow-y: auto;
       position: absolute;
       top: 100%;
-      right: 0;
+      right: -50%;
       background-color: #fff;
       padding: 0;
       border: 1px solid #ddd;

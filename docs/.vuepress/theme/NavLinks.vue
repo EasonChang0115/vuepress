@@ -105,6 +105,19 @@ export default {
   a {
     line-height: 1.4rem;
     color: inherit;
+    &::after {
+      height: 2px;
+      background-color: $accentColor;
+      content: '';
+      width: 0;
+      position: absolute;
+      transform: translateX(-50%);
+      transition: width 0.4s;
+      transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
+      left: 50%;
+      bottom: 0;
+      margin-top: 1rem;
+    }
     &:hover,
     &.router-link-active {
       color: $accentColor;
@@ -143,8 +156,9 @@ export default {
   .nav-item > a:not(.external) {
     &:hover,
     &.router-link-active {
-      margin-bottom: -2px;
-      border-bottom: 2px solid lighten($accentColor, 8%);
+      &:after {
+        width: calc(100% - 5px);
+      }
     }
   }
 }
