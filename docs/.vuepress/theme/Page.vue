@@ -4,6 +4,10 @@
 
     <Content :custom="false"/>
 
+    <div class="pageImage">
+      <img :src="pageImage" alt="">
+    </div>
+
     <div class="page-edit">
       <div class="edit-link" v-if="editLink">
         <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
@@ -38,11 +42,20 @@ import { resolvePage, normalize, outboundRE, endingSlashRE } from "./util";
 
 export default {
   props: ["sidebarItems"],
-
+  mounted() {
+    console.log(this.sidebarItems);
+    console.log(this.$page);
+  },
   computed: {
     lastUpdated() {
       if (this.$page.lastUpdated) {
         return new Date(this.$page.lastUpdated).toLocaleString(this.$lang);
+      }
+    },
+
+    pageImage() {
+      if (this.$page.frontmatter.image) {
+        return this.$page.frontmatter.image;
       }
     },
 

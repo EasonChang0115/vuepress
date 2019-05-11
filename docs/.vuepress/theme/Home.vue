@@ -37,12 +37,6 @@ import NavLink from "./NavLink.vue";
 
 export default {
   components: { NavLink },
-  mounted() {
-    console.log(this.data);
-    console.log(this.$page);
-    console.log(this.$site);
-    console.log(this.$title);
-  },
   computed: {
     data() {
       return this.$page.frontmatter;
@@ -214,7 +208,6 @@ export default {
       }
 
       .description {
-        font-size: 1.2rem;
         margin: 1.2rem 1rem;
       }
 

@@ -107,6 +107,7 @@ $navbar-horizontal-padding: 2.5rem;
     font-weight: 600;
     color: $textColor;
     position: relative;
+    top: 5px;
     &.can-hide {
       display: none;
     }
