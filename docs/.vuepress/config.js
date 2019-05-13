@@ -1,7 +1,7 @@
 var sideconfig = require('./sideconfig');
 module.exports = {
   base: '/', // 部署到DNS下的路徑
-  title: 'HAO Lit2', // 網站的標題
+  title: 'HAO Lit', // 網站的標題
   description: '紀錄、關注及靈活運用技術，創造自我價值', // 網站的描述 會以meta渲染到當前的頁面中
   serviceWorker: true, // 輕PWA 會緩存訪問過的頁面 用於離線瀏覽(若需要 可以在 public 生成 Manifest 和 icons)
   //ga: 'UA-123456789-0', 
