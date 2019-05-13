@@ -1,7 +1,7 @@
 {
   "name": "goodjasonblog",
   "version": "1.0.0",
-  "description": "建利技術部落格專案 使用vue press",
+  "description": "建立技術部落格專案 使用vue press",
   "main": "index.js",
   "scripts": {
     "dev": "vuepress dev docs",
