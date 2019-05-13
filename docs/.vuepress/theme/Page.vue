@@ -8,6 +8,8 @@
 
     <Content :custom="false"/>
 
+    <OverviewArticle v-if="this.$page.frontmatter.overview"></OverviewArticle>
+
     <div class="page-edit">
       <div class="edit-link" v-if="editLink">
         <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
@@ -39,9 +41,11 @@
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from "./util";
+import OverviewArticle from './OverviewArticle.vue';
 
 export default {
   props: ["sidebarItems"],
+  components: { OverviewArticle },
   mounted() {
     console.log(this.sidebarItems);
     console.log(this.$page);
@@ -186,7 +190,7 @@ function find(page, items, offset) {
   padding-bottom: 2rem;
   .pageImage {
     box-sizing: border-box;
-    padding: 2rem 2.5rem;
+    padding: 4.5rem 2.5rem 0;
     width: 100%;
     img {
       object-fit: cover;
@@ -239,6 +243,18 @@ function find(page, items, offset) {
 }
 
 @media (max-width: $MQMobile) {
+  .page {
+    .pageImage {
+      box-sizing: border-box;
+      padding: 4.5rem 1.5rem 0;
+      width: 100%;
+      img {
+        object-fit: cover;
+        width: 100%;
+        max-height: 480px;
+      }
+    }
+  }
   .page-edit {
     .edit-link {
       margin-bottom: 0.5rem;
