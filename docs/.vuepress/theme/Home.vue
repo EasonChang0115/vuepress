@@ -28,7 +28,7 @@
     </div>
 
     <div class="articles" v-if="lastedArticle && lastedArticle.length">
-      <h2>New</h2>
+      <h2><span class="text-box">N</span><span class="text-box delay-1">e</span><span class="text-box delay-2">w</span></h2>
       <div>
       <ArticleCard class="article" v-for="(article, index) in lastedArticle.slice(0, 3)" :key="index" :article="article"></ArticleCard>
       </div>
@@ -82,6 +82,7 @@ export default {
 
 <style lang="scss">
 @import "./styles/config.scss";
+@import "./styles/animated.scss";
 
 .home {
   padding: $navbarHeight 2rem 0;

@@ -187,7 +187,7 @@ export default {
       margin: 0;
       .dropdown-item {
         a {
-          padding: 1rem 2rem;
+          padding: 0.6rem 1.3rem;
           position: relative;
           box-shadow: inset 0 -1px 0 0 #f7f6f6;
           &:hover {
