@@ -19,7 +19,7 @@ module.exports = {
   ],
   sidebarDepth: 2,
   themeConfig: {
-    logo: 'logo.png',
+    logo: '/logo.png',
     repo: 'EasonChang0115/vuepress',
     personal: {
       name: 'Eason',

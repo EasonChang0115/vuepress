@@ -2,11 +2,11 @@
   <div class="page">
     <slot name="top"/>
 
-    <Content :custom="false"/>
-
     <div class="pageImage">
       <img :src="pageImage" alt="">
     </div>
+
+    <Content :custom="false"/>
 
     <div class="page-edit">
       <div class="edit-link" v-if="editLink">
@@ -184,6 +184,16 @@ function find(page, items, offset) {
 
 .page {
   padding-bottom: 2rem;
+  .pageImage {
+    box-sizing: border-box;
+    padding: 2rem 2.5rem;
+    width: 100%;
+    img {
+      object-fit: cover;
+      width: 100%;
+      max-height: 480px;
+    }
+  }
 }
 
 .page-edit {
