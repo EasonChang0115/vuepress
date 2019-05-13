@@ -3,6 +3,8 @@ node_js:
   - lts/*
 script:
   - ./deploy.sh
+before_install:
+  - gem install bundler
 deploy:
   provider: pages
   skip-cleanup: true
