@@ -25,12 +25,11 @@
     <div class="page-nav" v-if="prev || next">
       <p class="inner">
         <span v-if="prev" class="prev">
-          ←
-          <router-link v-if="prev" class="prev" :to="prev.path">{{ prev.title || prev.path }}</router-link>
+          <router-link v-if="prev" :to="prev.path"><i class="fas fa-arrow-left"></i>{{ prev.title || prev.path }}</router-link>
         </span>
 
         <span v-if="next" class="next">
-          <router-link v-if="next" :to="next.path">{{ next.title || next.path }}</router-link>→
+          <router-link v-if="next" :to="next.path">{{ next.title || next.path }}<i class="fas fa-arrow-right"></i></router-link>
         </span>
       </p>
     </div>
@@ -235,9 +234,32 @@ function find(page, items, offset) {
   .inner {
     min-height: 2rem;
     margin-top: 0;
-    border-top: 1px solid $borderColor;
     padding-top: 1rem;
     overflow: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .prev, .next {
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1rem;
+    transition: .3s;
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
+    a i {
+      margin: 0px 8px;
+    }
+    &:hover {
+      a {
+        color: white;
+      }
+      background-color: $accentColor;
+    }
   }
   .next {
     float: right;
