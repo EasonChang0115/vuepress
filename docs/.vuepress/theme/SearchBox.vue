@@ -172,6 +172,7 @@ export default {
     width: 20rem;
     position: absolute;
     top: 1.5rem;
+    right: 0px;
     border: 1px solid darken($borderColor, 10%);
     border-radius: 6px;
     padding: 0.4rem;
