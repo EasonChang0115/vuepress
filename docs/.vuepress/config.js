@@ -20,11 +20,11 @@ module.exports = {
   sidebarDepth: 2,
   themeConfig: {
     logo: '/logo.png',
-    repo: 'EasonChang0115/vuepress',
     personal: {
       name: 'Eason',
       photo: '/person.jpg',
     },
+    lastUpdated: '最後更新時間',
     nav: [
       { text: '首頁', link: '/' },
       { text: '前端技術', link: '/articles/' },

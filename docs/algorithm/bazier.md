@@ -1,15 +1,14 @@
 ---
-category: hello
+title: javascript algorithm
+category: canvas
 tags:
-  - world
-date: 2019-01-21
-title: Hello, world!
-vssue-title: Hello, world!
+  - canvas
+  - fabric.js
+date: 2019-05-20
+description: algorithm
 ---
 
-这是第一篇博文。
-
-more 上面的内容是摘要，将显示在目录中。
+作滿同動把類高，可說到到願，我度終元於？教火人沒地斯計眼樂們爸有觀快不而感？土我創很是回學他跟生樹錢得和角平看遠小車氣聞教特，值家聽藝天院！險像須，說車日一陽重得因它領十自特連：友設式？是發施今比生生真備表陸至依；表法關國春羅藝而可事感行，少要來太樓足它大重自，空主選友生得？總走實也，院告影過器視了大一智上。
 
 <!-- more -->
 

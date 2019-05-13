@@ -20,9 +20,9 @@
     <div class="links" :style="{
         'max-width': linksWrapMaxWidth + 'px'
       }">
+      <NavLinks class="can-hide"/>
       <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia"/>
       <SearchBox v-else-if="$site.themeConfig.search !== false"/>
-      <NavLinks class="can-hide"/>
     </div>
   </header>
 </template>

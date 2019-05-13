@@ -145,7 +145,7 @@ export default {
 .search-box {
   display: inline-block;
   position: relative;
-  margin-right: 1rem;
+  margin-left: 1rem;
   input {
     border: 1px solid #e4e4e4;
     cursor: text;

@@ -19,12 +19,10 @@
     </div>
 
     <Home v-else-if="$page.frontmatter.home"/>
-
     <Page v-else :sidebar-items="sidebarItems">
       <slot name="page-top" slot="top"/>
       <slot name="page-bottom" slot="bottom"/>
     </Page>
-
     <SWUpdatePopup :updateEvent="swUpdateEvent"/>
   </div>
 </template>
@@ -48,7 +46,6 @@ export default {
       swUpdateEvent: null
     };
   },
-
   computed: {
     shouldShowNavbar() {
       const { themeConfig } = this.$site;

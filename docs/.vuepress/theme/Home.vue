@@ -27,6 +27,13 @@
       </div>
     </div>
 
+    <div class="articles" v-if="lastedArticle && lastedArticle.length">
+      <h2>New</h2>
+      <div>
+      <ArticleCard class="article" v-for="(article, index) in lastedArticle.slice(0, 3)" :key="index" :article="article"></ArticleCard>
+      </div>
+    </div>
+
     <div class="features" v-if="data.features && data.features.length">
       <div class="feature" v-for="(feature, index) in data.features" :key="index">
         <h2><a :href="feature.link">{{ feature.title }}</a></h2>
@@ -34,22 +41,23 @@
       </div>
     </div>
 
-    
 
     <Content custom/>
 
-    <div class="footer" v-if="data.footer">{{ data.footer }}</div>
+    <Footer v-if="data.footer">{{ data.footer }}</Footer>
   </div>
 </template>
 
 <script>
 import NavLink from "./NavLink.vue";
+import ArticleCard from "./ArticleCard.vue";
+import Footer from "./Footer.vue";
 
 export default {
-  components: { NavLink },
+  components: { NavLink, ArticleCard, Footer },
   mounted() {
     console.log(this.data);
-    console.log(this.$site);
+    console.log(this.lastedArticle);
   },
   computed: {
     data() {
@@ -61,6 +69,12 @@ export default {
         link: this.data.actionLink,
         text: this.data.actionText
       };
+    },
+    // 文章依日期排序(最新到最舊)
+    lastedArticle() {
+      let articles = this.$site.pages.filter(page => /\.html$/.test(page.path));
+      articles = articles.sort((a, b) => new Date(b.lastUpdated) - new Date(a.lastUpdated));
+      return articles;
     }
   }
 };
@@ -152,7 +166,7 @@ export default {
     }
   }
 
-  .features, .introduces {
+  .features, .introduces, .articles {
     border-top: 1px solid $borderColor;
     padding: 1.2rem 0;
     margin-top: 2.5rem;
@@ -162,6 +176,7 @@ export default {
     align-content: stretch;
     justify-content: space-between;
   }
+  
   .introduce {
     flex-grow: 1;
   }
@@ -170,7 +185,7 @@ export default {
     flex-basis: 30%;
     max-width: 30%;
   }
-  .feature, .introduce {
+  .feature, .introduce, .articles {
     h2, h2 a {
       font-size: 1.4rem;
       font-weight: 500;
