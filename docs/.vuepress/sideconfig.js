@@ -3,7 +3,7 @@ module.exports = {
     return [
       { 
         title: 'javascript',
-        collapsable: false,
+        collapsable: true,
         children: [
           'javascript/20190509_2',
           'javascript/20190509_3',
@@ -11,7 +11,7 @@ module.exports = {
         ]
       }, { 
         title: 'css',
-        collapsable: false,
+        collapsable: true,
         children: [
           'css/20190509_1',
         ]

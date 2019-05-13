@@ -29,7 +29,7 @@
 
     <div class="features" v-if="data.features && data.features.length">
       <div class="feature" v-for="(feature, index) in data.features" :key="index">
-        <h2>{{ feature.title }}</h2>
+        <h2><a :href="feature.link">{{ feature.title }}</a></h2>
         <p>{{ feature.details }}</p>
       </div>
     </div>
@@ -47,6 +47,10 @@ import NavLink from "./NavLink.vue";
 
 export default {
   components: { NavLink },
+  mounted() {
+    console.log(this.data);
+    console.log(this.$site);
+  },
   computed: {
     data() {
       return this.$page.frontmatter;
@@ -167,7 +171,7 @@ export default {
     max-width: 30%;
   }
   .feature, .introduce {
-    h2 {
+    h2, h2 a {
       font-size: 1.4rem;
       font-weight: 500;
       border-bottom: none;
@@ -203,7 +207,6 @@ export default {
 
     .feature {
       max-width: 100%;
-      padding: 0 2.5rem;
     }
   }
 }

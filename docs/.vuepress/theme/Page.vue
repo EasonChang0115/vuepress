@@ -2,7 +2,7 @@
   <div class="page">
     <slot name="top"/>
 
-    <div class="pageImage">
+    <div class="pageImage" v-if="pageImage">
       <img :src="pageImage" alt="">
     </div>
 
