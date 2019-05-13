@@ -13,6 +13,4 @@ features:
   link: '/algorithm/'
 - title: 關於主題
   details: VuePress 我稍微修改他layout中的內容，若有興趣的朋友可以關注我的文章。
-  
-footer: MIT Licensed | Copyright © 2019-present JasonChang | power by vuepress
 ---

@@ -8,7 +8,7 @@
 
     <Content :custom="false"/>
 
-    <OverviewArticle v-if="this.$page.frontmatter.overview"></OverviewArticle>
+    <OverviewArticles v-if="this.$page.frontmatter.overview"></OverviewArticles>
 
     <div class="page-edit">
       <div class="edit-link" v-if="editLink">
@@ -36,19 +36,22 @@
     </div>
 
     <slot name="bottom"/>
+    <Footer v-if="$site.themeConfig.personal.footer">{{ $site.themeConfig.personal.footer }}</Footer>
   </div>
 </template>
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from "./util";
-import OverviewArticle from './OverviewArticle.vue';
+import OverviewArticles from './OverviewArticles.vue';
+import Footer from './Footer.vue';
 
 export default {
   props: ["sidebarItems"],
-  components: { OverviewArticle },
+  components: { OverviewArticles, Footer },
   mounted() {
     console.log(this.sidebarItems);
     console.log(this.$page);
+    console.log(this.$site);
   },
   computed: {
     lastUpdated() {
@@ -187,7 +190,6 @@ function find(page, items, offset) {
 @import "./styles/wrapper.scss";
 
 .page {
-  padding-bottom: 2rem;
   .pageImage {
     box-sizing: border-box;
     padding: 4.5rem 2.5rem 0;

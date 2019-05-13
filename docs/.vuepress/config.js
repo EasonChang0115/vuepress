@@ -23,6 +23,7 @@ module.exports = {
     personal: {
       name: 'Eason',
       photo: '/person.jpg',
+      footer: 'MIT Licensed | Copyright © 2019-present JasonChang | power by vuepress'
     },
     lastUpdated: '最後更新時間',
     nav: [

@@ -17,7 +17,12 @@
 </script>
 
 <style lang="scss">
+@import "./styles/config.scss";
 footer.footer {
+  padding: 2.5rem;
+  border-top: 1px solid $borderColor;
+  text-align: center;
+  color: lighten($textColor, 25%);
   .social {
     margin-top: 1rem;
     a {

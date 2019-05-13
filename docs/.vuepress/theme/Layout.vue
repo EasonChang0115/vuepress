@@ -19,7 +19,7 @@
     </div>
 
     <Home v-else-if="$page.frontmatter.home"/>
-    <Page v-else :sidebar-items="sidebarItems">
+    <Page v-else :sidebarItems="sidebarItems">
       <slot name="page-top" slot="top"/>
       <slot name="page-bottom" slot="bottom"/>
     </Page>

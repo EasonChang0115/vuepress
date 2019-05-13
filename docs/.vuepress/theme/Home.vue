@@ -43,8 +43,7 @@
 
 
     <Content custom/>
-
-    <Footer v-if="data.footer">{{ data.footer }}</Footer>
+    <Footer v-if="$site.themeConfig.personal.footer">{{ $site.themeConfig.personal.footer }}</Footer>
   </div>
 </template>
 
@@ -55,10 +54,6 @@ import Footer from "./Footer.vue";
 
 export default {
   components: { NavLink, ArticleCard, Footer },
-  mounted() {
-    console.log(this.data);
-    console.log(this.lastedArticle);
-  },
   computed: {
     data() {
       return this.$page.frontmatter;
@@ -198,13 +193,6 @@ export default {
     p {
       color: lighten($textColor, 25%);
     }
-  }
-
-  .footer {
-    padding: 2.5rem;
-    border-top: 1px solid $borderColor;
-    text-align: center;
-    color: lighten($textColor, 25%);
   }
 }
 
