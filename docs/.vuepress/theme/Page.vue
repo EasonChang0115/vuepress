@@ -8,7 +8,7 @@
 
     <Content :custom="false"/>
 
-    <OverviewArticles v-if="this.$page.frontmatter.overview"></OverviewArticles>
+    <OverviewArticles v-if="this.$page.frontmatter.overview" :sidebarItems="sidebarItems"></OverviewArticles>
 
     <div class="page-edit">
       <div class="edit-link" v-if="editLink">

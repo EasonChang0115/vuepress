@@ -1,5 +1,5 @@
 <template>
-  <article class="article-card">
+  <article class="little-article-card">
     <div class="image-box">
       <router-link :to="article.path">
         <img
@@ -13,9 +13,7 @@
       <h2 class="card-title">
         <router-link :to="article.path">{{ article.title }}</router-link>
       </h2>
-      <div class="card-content">
-        <div v-html="article.excerpt" class="excerpt"></div>
-      </div>
+      <div v-html="article.excerpt" class="card-content"></div>
       <h4 class="author">
         <router-link class="article-link" :to="article.path">閱讀全文</router-link>
         <span>{{ new Date(article.lastUpdated).Format("yyyy-MM-dd hh:mm:ss") }}</span>
@@ -61,9 +59,10 @@ export default {
 
 <style lang="scss">
 @import "./styles/config.scss";
-article.article-card {
+article.little-article-card {
+  width: 100%;
   display: grid;
-  grid-template-columns: 5fr 7fr;
+  grid-template-columns: 3fr 9fr;
   transition: 0.3s;
   margin-top: 2rem;
   &:first-child {
@@ -74,7 +73,7 @@ article.article-card {
     cursor: pointer;
     img {
       width: 100%;
-      height: 200px;
+      height: 120px;
       object-fit: contant;
       border-radius: 3px;
       box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.1);
@@ -87,21 +86,22 @@ article.article-card {
   .information-box {
     h2.card-title {
       font-size: 1.5rem;
-      margin: 8px 0;
+      margin: 4px 0;
+      a {
+        color: #696969;
+      }
     }
     .card-content {
-      .excerpt {
-        width: 100%;
-        p {
-          margin: 0px;
-          display: -webkit-box;
-          overflow: hidden;
-          font-size: 0.9rem;
-          color: lighten($textColor, 25%);
-          text-overflow: ellipsis;
-          -webkit-line-clamp: 3;
-          -webkit-box-orient: vertical;
-        }
+      p {
+        margin: 0px;
+        font-size: 0.9rem;
+        color: lighten($textColor, 25%);
+
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
       a.article-link {
         color: $accentColor;
@@ -134,10 +134,35 @@ article.article-card {
   }
   @media (max-width: $MQMobile) {
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 8px);
+    grid-template-columns: 100%;
+    &:first-child {
+      margin-top: 2rem;
+    }
+    &:nth-child(odd) {
+      margin-right: 8px;
+    }
+    &:nth-child(even) {
+      margin-left: 8px;
+    }
+    .information-box {
+      padding: 8px 15px;
+    }
     .image-box {
       padding: 0;
+      img {
+        height: 250px;
+      }
     }
-    grid-template-columns: 100%;
+  }
+  @media (max-width: $MQMobileNarrow) {
+    width: 100%;
+    &:nth-child(odd) {
+      margin: 0;
+    }
+    &:nth-child(even) {
+      margin: 0;
+    }
   }
 }
 </style>
