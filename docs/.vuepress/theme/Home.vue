@@ -19,12 +19,22 @@
       </p>
     </div>
 
+
+    <div class="introduces" v-if="data.introduces && data.introduces.length">
+      <div class="introduce" v-for="(introduce, index) in data.introduces" :key="index">
+        <h2>{{ introduce.title }}</h2>
+        <p>{{ introduce.details }}</p>
+      </div>
+    </div>
+
     <div class="features" v-if="data.features && data.features.length">
       <div class="feature" v-for="(feature, index) in data.features" :key="index">
         <h2>{{ feature.title }}</h2>
         <p>{{ feature.details }}</p>
       </div>
     </div>
+
+    
 
     <Content custom/>
 
@@ -138,7 +148,7 @@ export default {
     }
   }
 
-  .features {
+  .features, .introduces {
     border-top: 1px solid $borderColor;
     padding: 1.2rem 0;
     margin-top: 2.5rem;
@@ -148,12 +158,15 @@ export default {
     align-content: stretch;
     justify-content: space-between;
   }
-
+  .introduce {
+    flex-grow: 1;
+  }
   .feature {
     flex-grow: 1;
     flex-basis: 30%;
     max-width: 30%;
-
+  }
+  .feature, .introduce {
     h2 {
       font-size: 1.4rem;
       font-weight: 500;

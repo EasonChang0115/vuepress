@@ -23,7 +23,7 @@ module.exports = {
     repo: 'EasonChang0115/vuepress',
     personal: {
       name: 'Eason',
-      photo: 'person.jpg',
+      photo: '/person.jpg',
     },
     nav: [
       { text: '首頁', link: '/' },
@@ -33,6 +33,7 @@ module.exports = {
         { text: 'GitHub', link: 'https://github.com/EasonChang0115', icon: 'fab fa-facebook'},
         { text: 'Facebook', link: 'https://www.facebook.com/EasonChang0115', icon: 'fab fa-github' },
         { text: 'CodePen', link: 'https://codepen.io/JasonChang/', icon: 'fab fa-codepen' },
+        { text: 'Cakeresume', link: 'https://www.cakeresume.com/s8710606', icon: 'cakeresume' },
       ]},
       
     ],

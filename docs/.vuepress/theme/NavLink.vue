@@ -6,8 +6,11 @@
     class="nav-link external"
     :target="isMailto(link) || isTel(link) ? null : '_blank'"
     :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'"
-  >
-    <i :class="item.icon"></i>
+  > 
+    <i v-if="item.icon === 'cakeresume'">
+      <img :src="$withBase('/cakeresume.png')" width="15px" alt="cakeresume">
+    </i>
+    <i v-else :class="item.icon"></i>
     {{ item.text }}
   </a>
 </template>
