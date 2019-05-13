@@ -45,7 +45,7 @@ module.exports = {
   },
   markdown: {
     anchor: { permalink: true }, // 文件內部連結。
-    lineNumbers: false, // 程式碼區塊是否顯示行號
+    lineNumbers: true, // 程式碼區塊是否顯示行號
     toc: { includeLevel: [2, 3] }, // 目錄顯示標題的層級
     // config: md => { // 外部插件设置：markdown-it-plugin。
     //   md.set({ breaks: true })

@@ -244,6 +244,7 @@ function find(page, items, offset) {
   }
   .prev, .next {
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
     padding: 0.5rem 1rem;
     transition: .3s;
     a {
@@ -258,7 +259,7 @@ function find(page, items, offset) {
       a {
         color: white;
       }
-      background-color: $accentColor;
+      background-color: rgba($textColor, 0.4);
     }
   }
   .next {

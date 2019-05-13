@@ -20,7 +20,7 @@
     border-radius: 6px;
     overflow: auto;
     code {
-      color: #fff;
+      color: rgba(black, 0.7);
       padding: 0;
       background-color: transparent;
       border-radius: 0;
@@ -78,7 +78,7 @@ div[class*="language-"] {
       }
     }
     pre {
-      padding-left: $lineNumbersWrapperWidth + 1 rem;
+      padding-left: 3rem;
       vertical-align: middle;
     }
     .line-numbers-wrapper {
@@ -86,7 +86,7 @@ div[class*="language-"] {
       top: 0;
       width: $lineNumbersWrapperWidth;
       text-align: center;
-      color: rgba(255, 255, 255, 0.3);
+      color: #afafaf;
       padding: 1.25rem 0;
       line-height: 1.4;
       br {
@@ -103,13 +103,11 @@ div[class*="language-"] {
       content: '';
       position: absolute;
       z-index: 2;
-      top: 0;
-      left: 0;
-      width: $lineNumbersWrapperWidth;
-      height: 100%;
-      border-radius: 6px 0 0 6px;
-      border-right: 1px solid rgba(0, 0, 0, 66%);
-      background-color: $codeBgColor;
+      top: 1.25rem;
+      left: 2rem;
+      width: 2px;
+      height: calc(100% - 2.5rem);
+      background-color: rgba($accentColor, 0.4);
     }
   }
 }
