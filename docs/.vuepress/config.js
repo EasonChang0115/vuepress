@@ -23,7 +23,7 @@ module.exports = {
     personal: {
       name: 'Eason',
       photo: '/person.jpg',
-      footer: 'MIT Licensed | Copyright © 2019-present JasonChang | power by vuepress'
+      footer: 'MIT Licensed | Copyright © 2019-present EasonChang | Power by Vuepress'
     },
     lastUpdated: '最後更新時間',
     nav: [
@@ -52,4 +52,5 @@ module.exports = {
     //   md.use(require('markdown-it-xxx')) // 使用 xxx 插件。
     // }
   },
+  plugins: ['@vuepress/back-to-top'] 
 }
