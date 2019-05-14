@@ -1,8 +1,12 @@
 language: node_js
 node_js:
   - lts/*
+install:
+  - npm install
+  - npm run build
 script:
-  - ./deploy.sh
+  - chmod u+x deploy.sh
+  - bash ./deploy.sh
 cache:
   directories:
     - node_modules
