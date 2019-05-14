@@ -47,11 +47,6 @@ import Footer from './Footer.vue';
 export default {
   props: ["sidebarItems"],
   components: { OverviewArticles, Footer },
-  mounted() {
-    console.log(this.sidebarItems);
-    console.log(this.$page);
-    console.log(this.$site);
-  },
   computed: {
     lastUpdated() {
       if (this.$page.lastUpdated) {

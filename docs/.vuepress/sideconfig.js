@@ -4,24 +4,20 @@ module.exports = {
       { 
         title: 'canvas',
         collapsable: true,
-        children: [
-          'canvas/20190509_1',
-        ]
+        children: []
       },
       { 
         title: 'javascript',
         collapsable: true,
         children: [
-          'javascript/20190509_2',
-          'javascript/20190509_3',
-          'javascript/20190509_4',
+          'javascript/20190514_1',
+          'javascript/20190514_2',
+          'javascript/20190514_3',
         ]
       }, { 
         title: 'css',
         collapsable: true,
-        children: [
-          'css/20190509_1',
-        ]
+        children: []
       }
     ]
   },
@@ -30,9 +26,7 @@ module.exports = {
       { 
         title,
         collapsable: false,
-        children: [
-          'bazier',
-        ]
+        children: []
       }
     ]
   }
