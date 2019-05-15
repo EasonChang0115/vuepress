@@ -17,23 +17,29 @@
       >{{ $siteTitle }}</span>
     </router-link>
 
-    <div class="links" :style="{
+    <div
+      class="links"
+      :style="linksWrapMaxWidth ? {
         'max-width': linksWrapMaxWidth + 'px'
-      }">
+      } : {}"
+    >
       <NavLinks class="can-hide"/>
       <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia"/>
-      <SearchBox v-else-if="$site.themeConfig.search !== false"/>
+      <SearchBox
+        v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"
+      />
     </div>
   </header>
 </template>
 
 <script>
-import SidebarButton from "./SidebarButton.vue";
-import SearchBox from "./SearchBox.vue";
-import NavLinks from "./NavLinks.vue";
+import AlgoliaSearchBox from "@AlgoliaSearchBox";
+import SearchBox from "@theme/components/SearchBox";
+import SidebarButton from "@theme/components/SidebarButton.vue";
+import NavLinks from "@theme/components/NavLinks.vue";
 
 export default {
-  components: { SidebarButton, NavLinks, SearchBox },
+  components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox },
 
   data() {
     return {
@@ -82,7 +88,9 @@ function css(el, property) {
 </script>
 
 <style lang="scss">
-@import "./styles/config.scss";
+@import "./../styles/config.scss";
+$navbar-vertical-padding: 0.7rem;
+$navbar-horizontal-padding: 1.5rem;
 
 $navbar-vertical-padding: 1.2rem;
 $navbar-horizontal-padding: 2.5rem;

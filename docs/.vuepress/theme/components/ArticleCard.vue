@@ -60,7 +60,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./styles/config.scss";
+@import "./../styles/config.scss";
 article.article-card {
   display: grid;
   grid-template-columns: 5fr 7fr;

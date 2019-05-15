@@ -1,16 +1,16 @@
 <template>
-  <div class="page">
+  <main class="page">
     <slot name="top"/>
 
     <div class="pageImage" v-if="pageImage">
       <img :src="pageImage" alt="">
     </div>
 
-    <Content :custom="false"/>
+    <Content/>
 
     <OverviewArticles v-if="this.$page.frontmatter.overview" :sidebarItems="sidebarItems"></OverviewArticles>
 
-    <div class="page-edit">
+    <footer class="page-edit">
       <div class="edit-link" v-if="editLink">
         <a :href="editLink" target="_blank" rel="noopener noreferrer">{{ editLinkText }}</a>
         <OutboundLink/>
@@ -20,7 +20,7 @@
         <span class="prefix">{{ lastUpdatedText }}:</span>
         <span class="time">{{ lastUpdated }}</span>
       </div>
-    </div>
+    </footer>
 
     <div class="page-nav" v-if="prev || next">
       <p class="inner">
@@ -36,28 +36,29 @@
 
     <slot name="bottom"/>
     <Footer v-if="$site.themeConfig.personal.footer">{{ $site.themeConfig.personal.footer }}</Footer>
-  </div>
+  </main>
 </template>
 
 <script>
-import { resolvePage, normalize, outboundRE, endingSlashRE } from "./util";
-import OverviewArticles from './OverviewArticles.vue';
-import Footer from './Footer.vue';
+import { resolvePage, outboundRE, endingSlashRE } from "../util";
+
+import OverviewArticles from '@theme/components/OverviewArticles.vue';
+import Footer from '@theme/components/Footer.vue';
 
 export default {
+
   props: ["sidebarItems"],
   components: { OverviewArticles, Footer },
   computed: {
-    lastUpdated() {
-      if (this.$page.lastUpdated) {
-        return new Date(this.$page.lastUpdated).toLocaleString(this.$lang);
-      }
-    },
 
     pageImage() {
       if (this.$page.frontmatter.image) {
         return this.$page.frontmatter.image;
       }
+    },
+    
+    lastUpdated() {
+      return this.$page.lastUpdated;
     },
 
     lastUpdatedText() {
@@ -104,14 +105,14 @@ export default {
         docsRepo = repo
       } = this.$site.themeConfig;
 
-      let path = normalize(this.$page.path);
-      if (endingSlashRE.test(path)) {
-        path += "README.md";
-      } else {
-        path += ".md";
-      }
-      if (docsRepo && editLinks) {
-        return this.createEditLink(repo, docsRepo, docsDir, docsBranch, path);
+      if (docsRepo && editLinks && this.$page.relativePath) {
+        return this.createEditLink(
+          repo,
+          docsRepo,
+          docsDir,
+          docsBranch,
+          this.$page.relativePath
+        );
       }
     },
 
@@ -132,8 +133,8 @@ export default {
         return (
           base.replace(endingSlashRE, "") +
           `/src` +
-          `/${docsBranch}` +
-          (docsDir ? "/" + docsDir.replace(endingSlashRE, "") : "") +
+          `/${docsBranch}/` +
+          (docsDir ? docsDir.replace(endingSlashRE, "") + "/" : "") +
           path +
           `?mode=edit&spa=0&at=${docsBranch}&fileviewer=file-view-default`
         );
@@ -142,11 +143,11 @@ export default {
       const base = outboundRE.test(docsRepo)
         ? docsRepo
         : `https://github.com/${docsRepo}`;
-
       return (
         base.replace(endingSlashRE, "") +
-        `/edit/${docsBranch}` +
-        (docsDir ? "/" + docsDir.replace(endingSlashRE, "") : "") +
+        `/edit` +
+        `/${docsBranch}/` +
+        (docsDir ? docsDir.replace(endingSlashRE, "") + "/" : "") +
         path
       );
     }
@@ -163,25 +164,29 @@ function resolveNext(page, items) {
 
 function find(page, items, offset) {
   const res = [];
-  items.forEach(item => {
-    if (item.type === "group") {
-      res.push(...(item.children || []));
-    } else {
-      res.push(item);
-    }
-  });
+  flatten(items, res);
   for (let i = 0; i < res.length; i++) {
     const cur = res[i];
-    if (cur.type === "page" && cur.path === page.path) {
+    if (cur.type === "page" && cur.path === decodeURIComponent(page.path)) {
       return res[i + offset];
+    }
+  }
+}
+
+function flatten(items, res) {
+  for (let i = 0, l = items.length; i < l; i++) {
+    if (items[i].type === "group") {
+      flatten(items[i].children || [], res);
+    } else {
+      res.push(items[i]);
     }
   }
 }
 </script>
 
 <style lang="scss">
-@import "./styles/config.scss";
-@import "./styles/wrapper.scss";
+@import "../styles/config.scss";
+@import "../styles/wrapper.scss";
 
 .page {
   .pageImage {

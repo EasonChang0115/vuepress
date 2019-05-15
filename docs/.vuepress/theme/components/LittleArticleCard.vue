@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./styles/config.scss";
+@import "./../styles/config.scss";
 article.little-article-card {
   width: 100%;
   display: grid;

@@ -1,9 +1,9 @@
 <template>
-  <div class="home">
-    <div class="hero">
+  <main class="home" aria-labelledby="main-title">
+    <header class="hero">
       <div class="bgImg" :style="{backgroundImage: `url('${$withBase(data.heroImage)}')`}"></div>
 
-      <div class="welcome-text">
+     <div class="welcome-text">
         <div class="imgbox">
           <img v-if="data.heroImage" class="personalPhoto" :src="$withBase($site.themeConfig.personal.photo)" alt="hero">
         </div>
@@ -13,12 +13,10 @@
         </div>
       </div>
 
-  
       <p class="action" v-if="data.actionText && data.actionLink">
         <NavLink class="action-button" :item="actionLink"/>
       </p>
-    </div>
-
+    </header>
 
     <div class="introduces" v-if="data.introduces && data.introduces.length">
       <div class="introduce" v-for="(introduce, index) in data.introduces" :key="index">
@@ -41,19 +39,20 @@
       </div>
     </div>
 
+    <Content class="custom"/>
 
-    <Content custom/>
     <Footer v-if="$site.themeConfig.personal.footer">{{ $site.themeConfig.personal.footer }}</Footer>
-  </div>
+  </main>
 </template>
 
 <script>
-import NavLink from "./NavLink.vue";
-import ArticleCard from "./ArticleCard.vue";
-import Footer from "./Footer.vue";
+import NavLink from "@theme/components/NavLink.vue";
+import ArticleCard from "@theme/components/ArticleCard.vue";
+import Footer from "@theme/components/Footer.vue";
 
 export default {
   components: { NavLink, ArticleCard, Footer },
+  
   computed: {
     data() {
       return this.$page.frontmatter;
@@ -76,8 +75,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./styles/config.scss";
-@import "./styles/animated.scss";
+@import "./../styles/config.scss";
+@import "./../styles/animated.scss";
 
 .home {
   padding: $navbarHeight 2rem 0;

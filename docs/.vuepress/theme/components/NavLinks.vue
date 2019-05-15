@@ -15,12 +15,13 @@
 </template>
 
 <script>
-import DropdownLink from "./DropdownLink.vue";
-import { resolveNavLinkItem } from "./util";
-import NavLink from "./NavLink.vue";
+import DropdownLink from "@theme/components/DropdownLink.vue";
+import { resolveNavLinkItem } from "../util";
+import NavLink from "@theme/components/NavLink.vue";
 
 export default {
   components: { NavLink, DropdownLink },
+
   computed: {
     userNav() {
       return this.$themeLocaleConfig.nav || this.$site.themeConfig.nav || [];
@@ -95,8 +96,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./styles/config.scss";
-
+@import "./../styles/config.scss";
 .nav-links {
   display: inline-block;
   a {

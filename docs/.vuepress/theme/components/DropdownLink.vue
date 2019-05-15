@@ -32,8 +32,8 @@
 </template>
 
 <script>
-import NavLink from "./NavLink.vue";
-import DropdownTransition from "./DropdownTransition.vue";
+import NavLink from "@theme/components/NavLink.vue";
+import DropdownTransition from "@theme/components/DropdownTransition.vue";
 
 export default {
   components: { NavLink, DropdownTransition },
@@ -49,6 +49,7 @@ export default {
       required: true
     }
   },
+
   methods: {
     toggle() {
       this.open = !this.open;
@@ -58,8 +59,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./styles/config.scss";
-
+@import "./../styles/config.scss";
 .dropdown-wrapper {
   cursor: pointer;
   .dropdown-title {

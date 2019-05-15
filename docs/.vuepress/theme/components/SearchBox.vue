@@ -140,7 +140,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./styles/config.scss";
+@import "./../styles/config.scss";
 
 .search-box {
   display: inline-block;

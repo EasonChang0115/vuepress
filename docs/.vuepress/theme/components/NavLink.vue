@@ -6,7 +6,7 @@
     class="nav-link external"
     :target="isMailto(link) || isTel(link) ? null : '_blank'"
     :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'"
-  > 
+  >
     <i v-if="item.icon === 'cakeresume'">
       <img :src="$withBase('/cakeresume.png')" width="15px" alt="cakeresume">
     </i>
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { isExternal, isMailto, isTel, ensureExt } from "./util";
+import { isExternal, isMailto, isTel, ensureExt } from "../util";
 
 export default {
   props: {
