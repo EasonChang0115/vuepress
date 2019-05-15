@@ -15,12 +15,21 @@ export default {
     threshold: {
       type: Number,
       default: 300
+    },
+    delayInMs: {
+      type: Number,
+      default: 16.66
+    },
+    scrollStepInPx: {
+      type: Number,
+      default: 50
     }
   },
 
   data() {
     return {
-      scrollTop: null
+      scrollTop: null,
+      intervalId: null
     };
   },
 
@@ -44,9 +53,22 @@ export default {
       );
     },
 
+    // scrollToTop() {
+    //   window.scrollTo({ top: 0, behavior: "smooth" });
+    //   this.scrollTop = 0;
+    // },
+
+    scrollStep() {
+      if (window.pageYOffset === 0) {
+        clearInterval(this.intervalId);
+        this.scrollTop = 0;
+      }
+      window.scroll(0, window.pageYOffset - this.scrollStepInPx);
+    },
+
     scrollToTop() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      this.scrollTop = 0;
+      let intervalId = setInterval(this.scrollStep, this.delayInMs);
+      this.intervalId = intervalId;
     }
   },
 
