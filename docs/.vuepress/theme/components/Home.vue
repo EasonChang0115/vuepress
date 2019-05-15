@@ -220,6 +220,8 @@ export default {
     padding-right: 1.5rem;
 
     .hero {
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
       h1,
       .description,
       .action {

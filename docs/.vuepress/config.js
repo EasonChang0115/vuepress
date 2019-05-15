@@ -55,6 +55,14 @@ module.exports = {
     ['@vuepress/google-analytics', {
         ga: 'UA-140161482-1'//你的Google Analytics ID
     }],
+    ['@vuepress/pwa', {
+      serviceWorker: true,
+      popupComponent: 'MySWUpdatePopup',
+      updatePopup: {
+        message: "內容在剛剛更新囉!!",
+        buttonText: "確認"
+      }
+    }],
     ['@vuepress/back-to-top']
   ]
 }
