@@ -14,6 +14,12 @@ module.exports = {
         integrity: 'sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay',
         crossorigin: 'anonymous'
       }
+    ],
+    [
+      'meta', {
+        name: 'google-site-verification',
+        content: 'LRcITAcDzreJqGsLpnduN7qLfxWmuoyeMdAJ7UWfzJg'
+      }
     ]
   ],
   sidebarDepth: 2,
