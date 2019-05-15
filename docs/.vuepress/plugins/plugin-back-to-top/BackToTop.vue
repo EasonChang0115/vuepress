@@ -16,10 +16,6 @@ export default {
       type: Number,
       default: 300
     },
-    delayInMs: {
-      type: Number,
-      default: 16.66
-    },
     scrollStepInPx: {
       type: Number,
       default: 50
@@ -29,7 +25,6 @@ export default {
   data() {
     return {
       scrollTop: null,
-      intervalId: null
     };
   },
 
@@ -59,16 +54,12 @@ export default {
     // },
 
     scrollStep() {
-      if (window.pageYOffset === 0) {
-        clearInterval(this.intervalId);
-        this.scrollTop = 0;
-      }
       window.scroll(0, window.pageYOffset - this.scrollStepInPx);
+      if (window.pageYOffset > 0) { requestAnimationFrame(this.scrollStep);} 
     },
 
     scrollToTop() {
-      let intervalId = setInterval(this.scrollStep, this.delayInMs);
-      this.intervalId = intervalId;
+      requestAnimationFrame(this.scrollStep);
     }
   },
 
