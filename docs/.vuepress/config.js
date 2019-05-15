@@ -63,6 +63,6 @@ module.exports = {
         buttonText: "確認"
       }
     }],
-    ['@vuepress/back-to-top']
+    [ require('./plugins/plugin-back-to-top') ]
   ]
 }
