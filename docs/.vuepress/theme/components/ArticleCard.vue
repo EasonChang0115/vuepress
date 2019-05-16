@@ -137,6 +137,9 @@ article.article-card {
     .image-box {
       padding: 0;
     }
+    .information-box {
+      padding: 0 0.8rem;
+    }
     grid-template-columns: 100%;
   }
 }

@@ -24,16 +24,15 @@
 
     <div class="page-nav" v-if="prev || next">
       <p class="inner">
-        <span v-if="prev" class="prev">
-          <router-link v-if="prev" :to="prev.path"><i class="fas fa-arrow-left"></i>{{ prev.title || prev.path }}</router-link>
+        <span>
+          <router-link class="prev" v-if="prev" :to="prev.path"><i class="fas fa-arrow-left"></i> {{ prev.title || prev.path }}</router-link>
         </span>
 
-        <span v-if="next" class="next">
-          <router-link v-if="next" :to="next.path">{{ next.title || next.path }}<i class="fas fa-arrow-right"></i></router-link>
+        <span>
+          <router-link class="next" v-if="next" :to="next.path">{{ next.title || next.path }} <i class="fas fa-arrow-right"></i></router-link>
         </span>
       </p>
     </div>
-
     <slot name="bottom"/>
     <Footer v-if="$site.themeConfig.personal.footer">{{ $site.themeConfig.personal.footer }}</Footer>
   </main>
@@ -232,9 +231,10 @@ function flatten(items, res) {
   padding-top: 1rem;
   padding-bottom: 0;
   .inner {
+    box-sizing: border-box;
     min-height: 2rem;
     margin-top: 0;
-    padding-top: 1rem;
+    padding: 0.5rem;
     overflow: auto;
     width: 100%;
     display: flex;
@@ -243,7 +243,7 @@ function flatten(items, res) {
     width: 100%;
   }
   .prev, .next {
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
     border-radius: 4px;
     padding: 0.5rem 1rem;
     transition: .3s;

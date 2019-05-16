@@ -155,7 +155,7 @@ article.little-article-card {
       }
     }
   }
-  @media (max-width: $MQMobileNarrow) {
+  @media (max-width: 519px) {
     width: 100%;
     &:nth-child(odd) {
       margin: 0;
