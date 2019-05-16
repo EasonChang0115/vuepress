@@ -159,8 +159,13 @@ article.little-article-card {
     width: 100%;
     &:nth-child(odd) {
       margin: 0;
+      margin-top: 1.5rem;
     }
     &:nth-child(even) {
+      margin: 0;
+      margin-top: 1.5rem;
+    }
+    &:first-child {
       margin: 0;
     }
   }
