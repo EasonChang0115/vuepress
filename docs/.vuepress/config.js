@@ -22,6 +22,11 @@ module.exports = {
       }
     ]
   ],
+  locales: {
+    '/': {
+      lang: 'zh-TW', // this will be set as the lang attribute on <html>
+    }
+  },
   sidebarDepth: 2,
   themeConfig: {
     logo: '/logo.png',
