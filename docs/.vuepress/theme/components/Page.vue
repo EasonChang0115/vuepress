@@ -247,6 +247,7 @@ function flatten(items, res) {
     border-radius: 4px;
     padding: 0.5rem 1rem;
     transition: .3s;
+    float: right;
     a {
       display: inline-block;
       width: 100%;
@@ -256,14 +257,9 @@ function flatten(items, res) {
       margin: 0px 8px;
     }
     &:hover {
-      a {
-        color: white;
-      }
-      background-color: rgba($textColor, 0.4);
+      color: white;
+      background-color: rgba($textColor, 0.3);
     }
-  }
-  .next {
-    float: right;
   }
 }
 
