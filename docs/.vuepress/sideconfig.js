@@ -14,7 +14,8 @@ module.exports = {
           'javascript/20190514_2',
           'javascript/20190514_3',
           'javascript/20190516_1',
-          'javascript/20190518_1'
+          'javascript/20190518_1',
+          'javascript/20190520_1'
         ]
       }, { 
         title: 'css',
