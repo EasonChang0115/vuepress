@@ -106,6 +106,10 @@ export default {
   box-sizing: border-box;
   margin: 0;
   border-left: 0.25rem solid transparent;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   &.open,
   &:hover {
     color: inherit;

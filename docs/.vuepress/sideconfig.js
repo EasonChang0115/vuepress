@@ -2,12 +2,12 @@ module.exports = {
   articlesSidebarConfig: function (title) {
     return [
       { 
-        title: 'canvas',
+        title: 'Canvas',
         collapsable: true,
         children: []
       },
       { 
-        title: 'javascript',
+        title: 'Javascript',
         collapsable: true,
         children: [
           'javascript/20190514_1',
@@ -18,7 +18,7 @@ module.exports = {
           'javascript/20190520_1'
         ]
       }, { 
-        title: 'css',
+        title: 'Css & Html',
         collapsable: true,
         children: [
           'css/20190514_4',

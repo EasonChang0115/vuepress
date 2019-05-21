@@ -30,5 +30,8 @@ export default {
   max-width: 740px;
   margin: 0 auto;
   padding: 0 2.5rem 2rem 2.5rem;
+  @media (max-width: $MQMobile) {
+    padding: 0 1.5rem 1rem 1.5rem;
+  }
 }
 </style>
