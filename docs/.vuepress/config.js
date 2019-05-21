@@ -62,11 +62,6 @@ module.exports = {
     //   md.use(require('markdown-it-xxx')) // 使用 xxx 插件。
     // }
   },
-  configureWebpack: {
-    output: {
-      globalObject: 'this', // 添加这个选项
-    }
-  },
   plugins: [
     ['@vuepress/google-analytics', {
         ga: 'UA-140161482-1'//你的Google Analytics ID
