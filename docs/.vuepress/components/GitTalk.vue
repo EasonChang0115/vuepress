@@ -26,4 +26,9 @@ export default {
 
 <style lang="scss" scoped>
 @import "../styles/config.scss";
+.gitalk-container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2.5rem 2rem 2.5rem;
+}
 </style>
