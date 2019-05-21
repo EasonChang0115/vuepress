@@ -2,7 +2,7 @@ const path = require('path')
 
 // Theme API.
 module.exports = (options, ctx) => ({
-  alias () {
+  alias() {
     const { themeConfig, siteConfig } = ctx
     // resolve algolia
     const isAlgoliaSearch = (

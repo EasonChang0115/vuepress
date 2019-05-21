@@ -74,6 +74,6 @@ module.exports = {
         buttonText: "確認"
       }
     }],
-    [ require('./plugins/plugin-back-to-top') ]
+    [require('./plugins/plugin-back-to-top')]
   ]
 }
