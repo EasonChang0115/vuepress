@@ -9,6 +9,8 @@ import "gitalk/dist/gitalk.css";
 import Gitalk from "gitalk";
 export default {
   mounted() {
+    console.log(window.location.hash);
+    console.log(window.location.pathname);
     let gitalk = new Gitalk({
       clientID: "d2208819a3a279c3c926",
       clientSecret: "582ba49c8729180e6a475f2c2509fa5c4e820eb9",
