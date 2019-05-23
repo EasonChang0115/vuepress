@@ -5,8 +5,7 @@ module.exports = {
         title: 'Canvas',
         collapsable: true,
         children: []
-      },
-      { 
+      }, { 
         title: 'Javascript',
         collapsable: true,
         children: [
@@ -22,6 +21,12 @@ module.exports = {
         collapsable: true,
         children: [
           'css/20190514_4',
+        ]
+      }, { 
+        title: 'Vuepress',
+        collapsable: true,
+        children: [
+          'vuepress/20190523_1',
         ]
       }
     ]
