@@ -24,12 +24,17 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../styles/config.scss";
 .gitalk-container {
   max-width: 740px;
   margin: 0 auto;
   padding: 0 2.5rem 2rem 2.5rem;
+  #gitalk-container {
+    .gt-container .gt-meta {
+      z-index: 2; 
+    }
+  }
   @media (max-width: $MQMobile) {
     padding: 0 1.5rem 1rem 1.5rem;
   }
