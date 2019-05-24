@@ -7,7 +7,8 @@
     </div>
 
     <Content/>
-    <git-talk v-if="this.$page.frontmatter.gitTalk" :key="this.$page.path"></git-talk>
+    <!-- <git-talk v-if="this.$page.frontmatter.gitTalk" :key="this.$page.path"></git-talk> -->
+    <disqus v-if="this.$page.frontmatter.gitTalk" :key="this.$page.path"></disqus>
     <OverviewArticles v-if="this.$page.frontmatter.overview" :sidebarItems="sidebarItems"></OverviewArticles>
 
     <footer class="page-edit">
