@@ -28,6 +28,7 @@
 <script>
 import LittleArticleCard from "./LittleArticleCard.vue";
 import Pagination from "./Pagination.vue";
+import { setTimeout } from 'timers';
 
 export default {
   data() {
@@ -65,6 +66,9 @@ export default {
   methods: {
     pageCallback(page) {
       this.currentPage = page;
+      setTimeout(() => {
+        window.scrollTo({'behavior': 'smooth', 'top': 0});
+      }, 0);
     }
   }
 };
