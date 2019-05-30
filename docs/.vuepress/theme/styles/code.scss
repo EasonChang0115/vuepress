@@ -42,7 +42,7 @@ div[class*="language-"] {
     width: 100%;
     line-height: 1.4;
     .highlighted {
-      background-color: rgba(0, 0, 0, 66%);
+      background-color: rgba(#e1e1e1, 0.9);
     }
   }
   pre, pre[class*="language-"] {
@@ -75,7 +75,7 @@ div[class*="language-"] {
         display: block;
         width: $lineNumbersWrapperWidth;
         height: 100%;
-        background-color: rgba(0, 0, 0, 66%);
+        background-color: rgba(#e1e1e1, 0.9);
       }
     }
     pre {
