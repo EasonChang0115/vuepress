@@ -16,7 +16,8 @@ module.exports = {
           'javascript/20190518_1',
           'javascript/20190520_1',
           'javascript/20190524_1',
-          'javascript/20190527_1'
+          'javascript/20190527_1',
+          'javascript/20190603_1'
         ]
       }, { 
         title: 'Css & Html',
