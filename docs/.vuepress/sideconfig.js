@@ -6,7 +6,7 @@ module.exports = {
         collapsable: true,
         children: []
       }, { 
-        title: 'Javascript 基礎功',
+        title: 'JavaScript 基礎功',
         collapsable: true,
         children: [
           'javascript/20190514_1',
@@ -20,7 +20,7 @@ module.exports = {
           'javascript/20190603_1'
         ]
       }, { 
-        title: 'Javascript 技術分享',
+        title: 'JavaScript 技術分享',
         collapsable: true,
         children: [
           'javascript/20190609_1',
