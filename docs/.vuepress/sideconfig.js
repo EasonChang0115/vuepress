@@ -32,6 +32,12 @@ module.exports = {
           'css/20190514_4',
         ]
       }, { 
+        title: 'Vue 相關技術',
+        collapsable: true,
+        children: [
+          'vue/20190621_1',
+        ]
+      }, { 
         title: 'Vuepress',
         collapsable: true,
         children: [
