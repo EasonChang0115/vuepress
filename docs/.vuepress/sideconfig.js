@@ -54,5 +54,16 @@ module.exports = {
         children: []
       }
     ]
+  },
+  theF2ESidebarConfig: function (title) {
+    return [
+      { 
+        title,
+        collapsable: false,
+        children: [
+          '20190716_1',
+        ]
+      }
+    ]
   }
 };

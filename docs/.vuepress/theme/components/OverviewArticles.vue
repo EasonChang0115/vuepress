@@ -38,6 +38,9 @@ export default {
       currentPage: 1
     };
   },
+  mounted() {
+    console.log(this.sidebarItems);
+  },
   props: ["sidebarItems"],
   components: {
     LittleArticleCard,
