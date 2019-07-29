@@ -17,7 +17,8 @@ module.exports = {
           'javascript/20190520_1',
           'javascript/20190524_1',
           'javascript/20190527_1',
-          'javascript/20190603_1'
+          'javascript/20190603_1',
+          'javascript/20190724_1'
         ]
       }, { 
         title: 'JavaScript 技術分享',
