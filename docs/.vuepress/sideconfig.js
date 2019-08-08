@@ -38,6 +38,7 @@ module.exports = {
         collapsable: true,
         children: [
           'vue/20190621_1',
+          'vue/20190808_1',
         ]
       }, { 
         title: 'Vuepress',
