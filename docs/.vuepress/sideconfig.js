@@ -1,5 +1,5 @@
 module.exports = {
-  articlesSidebarConfig: function (title) {
+  frontEndsSidebarConfig: function (title) {
     return [
       { 
         title: 'Canvas',
@@ -45,6 +45,16 @@ module.exports = {
         collapsable: true,
         children: [
           'vuepress/20190523_1',
+        ]
+      }
+    ]
+  },
+  backEndsSidebarConfig: function (title) {
+    return [
+      { 
+        title: 'Node 初心者',
+        collapsable: true,
+        children: [
         ]
       }
     ]

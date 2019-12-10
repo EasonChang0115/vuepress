@@ -38,9 +38,10 @@ module.exports = {
     lastUpdated: '最後更新時間',
     nav: [
       { text: '首頁', link: '/' },
-      { text: '前端技術', link: '/articles/' },
+      { text: '前端技術', link: '/frontEnd/' },
+      { text: '後端技術', link: '/backEnd/' },
       { text: '演算法大小事', link: '/algorithm/' },
-      { text: '精神時光屋', link: '/TheF2E/' },
+      { text: '精神時光屋', link: '/theF2E/' },
       { text: '關於我', items: [
         { text: 'GitHub', link: 'https://github.com/EasonChang0115', icon: 'fab fa-facebook'},
         { text: 'Facebook', link: 'https://www.facebook.com/EasonChang0115', icon: 'fab fa-github' },
@@ -50,9 +51,10 @@ module.exports = {
       
     ],
     sidebar: {
-      '/articles/': sideconfig.articlesSidebarConfig('前端技術'), // 设置侧边栏的链接目录、文字和函数名。
+      '/frontEnd/': sideconfig.frontEndsSidebarConfig('前端技術'), // 设置侧边栏的链接目录、文字和函数名。
+      '/backEnd/': sideconfig.backEndsSidebarConfig('後端技術'), // 设置侧边栏的链接目录、文字和函数名。
       '/algorithm/': sideconfig.algorithmSidebarConfig('演算法大小事'), // 设置侧边栏的链接目录、文字和函数名。
-      '/TheF2E/': sideconfig.theF2ESidebarConfig('精神時光屋'), // 设置侧边栏的链接目录、文字和函数名。
+      '/theF2E/': sideconfig.theF2ESidebarConfig('精神時光屋'), // 设置侧边栏的链接目录、文字和函数名。
     }
   },
   markdown: {
