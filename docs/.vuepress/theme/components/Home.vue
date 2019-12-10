@@ -68,7 +68,7 @@ export default {
     lastedArticle() {
       let articles = this.$site.pages.filter(page => /\.html$/.test(page.path));
       articles = articles.sort((a, b) => new Date(b.lastUpdated) - new Date(a.lastUpdated));
-      return articles;
+      return articles.filter(article => article.frontmatter.gitTalk);
     }
   }
 };

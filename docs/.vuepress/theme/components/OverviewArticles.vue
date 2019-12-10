@@ -6,6 +6,7 @@
       :article="article"
     ></LittleArticleCard>
     <Pagination
+      v-if="totalPage > 1"
       :page-count="totalPage"
       :current-page="currentPage"
       :page-range="3"
@@ -39,7 +40,7 @@ export default {
     };
   },
   mounted() {
-    console.log(this.sidebarItems);
+    // console.log(this.sidebarItems);
   },
   props: ["sidebarItems"],
   components: {

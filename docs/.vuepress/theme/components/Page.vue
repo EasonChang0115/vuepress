@@ -9,7 +9,7 @@
     <Content/>
     <!-- <git-talk v-if="this.$page.frontmatter.gitTalk" :key="this.$page.path"></git-talk> -->
     <disqus v-if="this.$page.frontmatter.gitTalk" :key="this.$page.path"></disqus>
-    <OverviewArticles v-if="this.$page.frontmatter.overview" :sidebarItems="sidebarItems"></OverviewArticles>
+    <OverviewArticles v-if="this.$page.frontmatter.overview" :sidebarItems="sidebarItems" :key="sidebarItems.length"></OverviewArticles>
 
     <footer class="page-edit">
       <div class="edit-link" v-if="editLink">
@@ -74,7 +74,7 @@ export default {
     prev() {
       const prev = this.$page.frontmatter.prev;
       if (prev === false) {
-        return;
+        return false;
       } else if (prev) {
         return resolvePage(this.$site.pages, prev, this.$route.path);
       } else {
@@ -85,7 +85,7 @@ export default {
     next() {
       const next = this.$page.frontmatter.next;
       if (next === false) {
-        return;
+        return false;
       } else if (next) {
         return resolvePage(this.$site.pages, next, this.$route.path);
       } else {
@@ -193,9 +193,13 @@ function flatten(items, res) {
     box-sizing: border-box;
     padding: 4.5rem 2.5rem 0;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
     img {
       object-fit: cover;
       width: 100%;
+      max-width: 1024px;
       max-height: 480px;
     }
   }
