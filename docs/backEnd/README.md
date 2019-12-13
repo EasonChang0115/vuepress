@@ -1,9 +1,81 @@
 ---
-title: 後端技術文章總覽
-description:  後端相關技術皆會記錄在這邊，有時候不懂的東西就在記錄的時候就會慢慢的了解並融會貫通。
-image: https://images.unsplash.com/photo-1561883088-039e53143d73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80
-sidebar: false
-overview: true
+title: V8、Node.js 介紹、安裝
+tags: Javascript, V8, Javascript
+description:
+image: https://i.imgur.com/zvbHRhe.jpg
+meta:
+  - name: og:url
+    content: https://easonchang0115.github.io/articles/javascript/20191210_1.html
+  - name: og:title
+    content: V8、Node.js介紹
+  - name: og:description
+    content: V8 是一個由 Google 開發的開源 JavaScript 引擎，主要用於 Google Chrome 瀏覽器快速編譯 Javacript。Node.js 也就是基於 V8 這個 Javacript 引擎下開發的一串程式模組，透過 V8 轉譯成機器碼給電腦解析，使 JavaScript 也能用於伺服器端編程，提供的模組功能也能替代 Apache 或 IIS 等 HTTP Server，作為獨立伺服器執行。
+  - name: og:image
+    content: https://i.imgur.com/zvbHRhe.jpg
+gitTalk: true
 ---
-# 後端技術文章總覽
 
+V8 是一個由 Google 開發的開源 JavaScript 引擎，主要用於 Google Chrome 瀏覽器快速編譯 Javacript。Node.js 也就是基於 V8 這個 Javacript 引擎下開發的一串程式模組，透過 V8 轉譯成機器碼給電腦解析，使 JavaScript 也能用於伺服器端編程，提供的模組功能也能替代 Apache 或 IIS 等 HTTP Server，作為獨立伺服器執行。
+
+<!-- more -->
+
+## Node.js 介紹
+
+我們可以在 [GitHub](https://github.com/nodejs/node) 看到其核心的程式碼，包含 V8 引擎。
+
+![](https://i.imgur.com/xLJazxD.png)
+
+在 Src 資料夾中可以看到很多 C++ 語言撰寫的程式碼，這邊就是 Node.js 核心的架構。也可以知道透過 C++ ，可以把 Javascript 轉譯成電腦看得懂的機器碼。
+
+而 lib 資料夾中，有各式各樣的 Node.js 內建模組，透過這些模組可以撰寫一個 Web 伺服器。
+
+### 特色
+
+Node.js 與其他撰寫後端程式語言不同的地方在於它是單執行緒，使用非阻塞 I/O 呼叫，這樣既可以支援數以萬計的並行連線，又不會因多執行緒本身的特點而帶來麻煩。眾多請求只使用單執行緒的設計意味著可以用於建立高並行應用程式
+
+### 安裝
+
+Node.js [官方](https://nodejs.org/en/)網站就可以依照自己電腦的環境下載。建議是下載安裝 LTS 已發佈的版本， Current 是最新測試版，可能和其他相依性的插件會有兼容的問題。
+![](https://i.imgur.com/DYyggai.png)
+
+安裝完後，開啟終端機( terminal )輸入：
+```
+node -v
+```
+就可以看到我們安裝的版本。
+
+### 執行 Javascript code
+
+在終端機輸入
+```
+node
+```
+按下 Enter 就可以在終端機執行並輸入 Javascript code。（如同在瀏覽器 console 介面）
+
+![](https://i.imgur.com/to9Hpaa.png)
+
+通常我們撰寫程式碼都會在一隻 Javascript 檔案中，所以我們可以切換到存放想要執行某隻 Javascript 檔案的資料夾下，輸入
+
+```
+node fileName.js
+```
+![](https://i.imgur.com/GanBlP0.png)
+
+就會順利執行某隻檔案的 Javascript code 內容。
+
+## Node.js 除錯
+
+這邊使用 Visual Studio Code 這個強大且最受歡迎的編輯器來撰寫我們的程式碼，並且使用這個編輯器的除錯功能。[詳細的使用安裝教學](http://blog.tonycube.com/2018/11/visual-studio-code.html)
+
+再撰寫網頁的 Javascript 我們通常都會把想要偵錯的變數在瀏覽器的 console 介面顯示出來或者使用 [chrome 的除錯功能](https://www.youtube.com/watch?v=5hm_QkCXiFA&list=PLYrA-SsMvTPOxLwIScddysuA3DYEOVpe1)，因為 Node.js 並沒有在瀏覽器的環境來執行，所以會使用終端機進入 Node 環境，把變數 console 出來，抑或是我們可以用 Visual Studio Code 提供的除錯工具來下中斷點，一行一行的監看我們的變數。
+
+![](https://i.imgur.com/mh3PTJL.png)
+
+可以在行數的左邊下中斷點，
+
+![](https://i.imgur.com/nWUsxaP.png)
+
+在編輯器的最左邊會有小瓢蟲的圖示的除錯工具按鈕，點選進入後，按下上方除錯的按鈕，就可以為我們的程式碼來一行行除錯了。
+
+
+##### 來源：[How the JavaScript V8 Engine of Chrome Works](https://www.oodlestechnologies.com/blogs/How-the-JavaScript-V8-Engine-of-Chrome-Works/)
