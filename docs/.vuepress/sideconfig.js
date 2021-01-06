@@ -47,7 +47,7 @@ module.exports = {
         collapsable: true,
         children: [
           'vuepress/20190523_1',
-          'vuepress/20201217_1',
+          'vuepress/20210106_1',
         ]
       }
     ]
