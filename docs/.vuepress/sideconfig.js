@@ -43,10 +43,11 @@ module.exports = {
           'vue/20190808_1',
         ]
       }, { 
-        title: 'Vuepress',
+        title: '其他',
         collapsable: true,
         children: [
           'vuepress/20190523_1',
+          'vuepress/20201217_1',
         ]
       }
     ]
