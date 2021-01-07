@@ -77,6 +77,13 @@ module.exports = {
         "text": "Tag"
       }
     },
+    vssueConfig: {
+      platform: 'github-v4',
+      owner: 'EasonChang0115',
+      repo: 'EasonChang0115.github.io',
+      clientId: '7332e8b40c6629c9c0f6',
+      clientSecret: '16ff65a5b3a0ec362ab25b8aeb864a5147116e0e',
+    },
     // "logo": "/logo.png",
     "search": true,
     "searchMaxSuggestions": 10,
@@ -98,7 +105,7 @@ module.exports = {
       transformer: timestamp => {
         return new Date(timestamp).toISOString()
       }
-    }]
+    }],
     [require('./theme/plugins/vuepress-plugin-back-to-top')],
     [require('./theme/plugins/vuepress-plugin-comments')],
     [require('./theme/plugins/vuepress-plugin-loading-page')],
