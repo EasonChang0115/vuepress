@@ -24,11 +24,7 @@ module.exports = {
       }
     ]
   ],
-  "locales": {
-    '/': {
-      lang: 'zh-TW', // this will be set as the lang attribute on <html>
-    }
-  },
+  "subSidebar": 'auto',
   "sidebarDepth": 2,
   "themeConfig": {
     "nav": [
