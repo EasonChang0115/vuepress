@@ -118,6 +118,7 @@ export default {
       return false
     },
     lastUpdated () {
+      console.log(this.$page);
       return new Date(this.$page.lastUpdated).toLocaleString()
     },
     lastUpdatedText () {
