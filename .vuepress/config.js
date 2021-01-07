@@ -95,8 +95,13 @@ module.exports = {
   },
   "plugins": [
     ['@vuepress/google-analytics', {
-        ga: 'UA-140161482-1'//你的Google Analytics ID
+        ga: 'UA-140161482-1' //你的Google Analytics ID
     }],
+    ['@vuepress/last-updated', {
+      transformer: timestamp => {
+        return new Date(timestamp).toISOString()
+      }
+    }]
     [require('./theme/plugins/vuepress-plugin-back-to-top')],
     [require('./theme/plugins/vuepress-plugin-comments')],
     [require('./theme/plugins/vuepress-plugin-loading-page')],
