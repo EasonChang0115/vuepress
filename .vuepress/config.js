@@ -24,9 +24,10 @@ module.exports = {
       }
     ]
   ],
-  "subSidebar": 'auto',
   "sidebarDepth": 2,
   "themeConfig": {
+    "mode": 'dark',
+    "subSidebar": 'auto',
     "nav": [
       {
         "text": "Home",
@@ -50,17 +51,17 @@ module.exports = {
           {
             "text": "CodePen",
             "link": "https://codepen.io/JasonChang/",
-            "icon": "fa-codepen"
+            "icon": "reco-api"
           },
           {
             "text": "FaceBook",
             "link": "https://www.facebook.com/EasonChang0115",
-            "icon": "fa-facebook-square"
+            "icon": "reco-facebook"
           },
           {
             "text": "CakeResume",
             "link": "https://www.cakeresume.com/s8710606",
-            "icon": "fa-file"
+            "icon": "reco-blog"
           }
         ]
       }
