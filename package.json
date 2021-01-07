@@ -7,7 +7,7 @@
     "build": "vuepress build"
   },
   "license": "MIT",
-  "description": "建立技術部落格專案 使用vue press",
+  "description": "建立技術部落格專案 使用 vue press",
   "dependencies": {
     "@vuepress/plugin-google-analytics": "^1.0.0-alpha.0",
     "@vssue/api-bitbucket-v2": "^1.4.7",
@@ -26,5 +26,13 @@
     "vue-property-decorator": "^9.1.2",
     "vuepress-plugin-smooth-scroll": "0.0.10",
     "vuepress": "1.7.1"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
