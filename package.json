@@ -1,22 +1,30 @@
 {
-  "name": "goodjasonblog",
+  "name": "hao-lit-blog",
   "version": "1.0.0",
-  "description": "建立技術部落格專案 使用vue press",
-  "main": "index.js",
+  "author": "EasonChang",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "dev": "vuepress dev . --open --host \"localhost\"",
+    "build": "vuepress build"
   },
-  "author": "jasonchang",
   "license": "MIT",
+  "description": "建立技術部落格專案 使用vue press",
   "dependencies": {
-    "@vuepress/plugin-back-to-top": "^1.0.0-alpha.0",
     "@vuepress/plugin-google-analytics": "^1.0.0-alpha.0",
-    "@vuepress/plugin-pwa": "^1.0.0-alpha.0",
-    "@vuepress/theme-default": "^1.0.0-alpha.48",
-    "gitalk": "^1.5.0",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^7.1.0",
-    "vuepress": "^1.0.0-alpha.48"
+    "@vssue/api-bitbucket-v2": "^1.4.7",
+    "@vssue/api-gitee-v5": "^1.4.7",
+    "@vssue/api-github-v3": "^1.4.7",
+    "@vssue/api-github-v4": "^1.4.7",
+    "@vssue/api-gitlab-v4": "^1.4.7",
+    "@vue/composition-api": "^1.0.0-beta.24",
+    "@vuepress/plugin-blog": "^1.9.3",
+    "docsearch.js": "^2.6.3",
+    "md5": "^2.3.0",
+    "valine": "^1.4.14",
+    "vssue": "^1.4.7",
+    "vue-class-component": "^7.2.6",
+    "vue-click-outside": "^1.1.0",
+    "vue-property-decorator": "^9.1.2",
+    "vuepress-plugin-smooth-scroll": "0.0.10",
+    "vuepress": "1.7.1"
   }
 }
