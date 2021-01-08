@@ -1,10 +1,19 @@
 <template>
-  <section class="theme-container" v-if="!noFoundPageByTencent">
-    <article class="content">
-      <h1>404</h1>
-      <blockquote>{{ getMsg() }}</blockquote>
-      <router-link to="/">Take me home.</router-link>
-    </article>
+  <section class="theme-container">
+    <router-link :to="$localePath">
+      <svg height="0.8em" width="0.8em" viewBox="0 0 2 1" preserveAspectRatio="none">
+      <polyline
+            fill="none" 
+            stroke="#777777" 
+            stroke-width="0.1" 
+            points="0.9,0.1 0.1,0.5 0.9,0.9" 
+      />
+    </svg> Home
+    </router-link>
+    <div class="background-wrapper">
+      <h1 id="visual">404</h1>
+    </div>
+    <p>The page you’re looking for does not exist.</p>
   </section>
 </template>
 
@@ -23,47 +32,89 @@ export default {
     }
   },
   mounted () {
-    if (this.noFoundPageByTencent) {
-      const dom = document.createElement('script')
-      dom.setAttribute('homePageName', '回到首页')
-      dom.setAttribute('homePageUrl', this.$site.base)
-      dom.setAttribute('src', '//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js')
+    const visual = document.getElementById("visual")
+    const events = ['resize', 'load']
 
-      document.body.append(dom)
-    }
-  },
-  methods: {
-    getMsg () {
-      return msgs[Math.floor(Math.random() * msgs.length)]
-    }
+    events.forEach(function(e){
+      window.addEventListener(e, function(){
+        const width = window.innerWidth
+        const height = window.innerHeight
+        const ratio = 45 / (width / height)
+        visual.style.transform = "translate(-50%, -50%) rotate(-" + ratio + "deg)"
+      });
+    });
   }
 }
 </script>
 
 <style src="../styles/theme.styl" lang="stylus"></style>
 
-<style lang="stylus">
-.content
-  margin 4rem auto 0
-  max-width 800px
-  padding 0 2rem
-.mod_404
-  .desc
-    .desc_link
-      display: inline-block
-      // margin: 20px 0
-      background: #424242!important
-      color: #ffffff
-      padding: 6px 20px!important
-      text-decoration: none!important
-      border-radius: 4px
+<style lang="stylus" scoped>
+@import url('https://fonts.googleapis.com/css?family=Eczar:800');
+@import url('https://fonts.googleapis.com/css?family=Poppins:600');
 
-@media screen and (max-width: 720px)
-  .mod_404
-    .desc
-      margin: 50px 0
-    .wrapper
-      margin 0!important
-      padding-top 20px
+
+.theme-container 
+	font-family "Poppins"
+	height 100vh
+	background-color #181818
+	padding 1em
+	overflow hidden
+
+.background-wrapper 
+	position relative
+	width 100%
+	height 100%
+	user-select none
+	h1 
+		position: absolute
+		top 50%
+		left 50%
+		transform translate(-50%, -50%) rotate(-45deg)
+		font-family "Eczar"
+		font-size 60vmax
+		color #282828
+		letter-spacing 0.025em
+		margin 0
+		transition 750ms ease-in-out
+
+a 
+	border 2px solid #555
+	padding 0.5em 0.8em
+	position fixed
+	z-index 1
+	color #555
+	text-decoration none
+	display flex
+	align-items center
+	transition 150ms
+	svg > polyline 
+		transition 150ms
+	&:hover 
+		color #333
+		background #dadada
+		border-color transparent
+		svg > polyline
+			stroke #000
+		+ .background-wrapper > h1
+			color: #dadada
+
+p
+	color #dadada
+	font-size calc(1em + 3vmin)
+	position fixed
+	bottom 1rem
+	right 1.5rem
+	margin 0
+	text-align right
+	text-shadow -1px -1px 0 #121212, 1px 1px 0 #121212, -1px 1px 0 #121212, 1px -1px 0 #121212
+	@media screen and (min-width: 340px)
+		width 70%
+	@media screen and (min-width: 560px)
+		width 50%;
+	@media screen and (min-width: 940px)
+		width 30%;
+	@media screen and (min-width: 1300px)
+		width 25%
 </style>
 
