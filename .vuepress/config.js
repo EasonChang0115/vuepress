@@ -84,7 +84,7 @@ module.exports = {
       clientId: '7332e8b40c6629c9c0f6',
       clientSecret: '16ff65a5b3a0ec362ab25b8aeb864a5147116e0e',
     },
-    // "logo": "/logo.png",
+    "logo": "/logo.png",
     "search": true,
     "searchMaxSuggestions": 10,
     "lastUpdated": "Last Updated",
