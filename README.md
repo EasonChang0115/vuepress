@@ -19,8 +19,8 @@ bgImageStyle: {
 }
 isShowTitleInHome: false
 features:
-  - title: 前端技術
-    details: 前端相關技術皆會記錄在這邊，有時候不懂的東西就在記錄的時候就會慢慢的了解並融會貫通，未來會新增後端技術的筆記，加強自我的能力值。
+  - title: FrontEnd
+    details: 前端相關技術皆會記錄在這邊，有時候不懂的東西就在記錄的時候就會慢慢的了解並融會貫通，未來會新增BackEnd的筆記，加強自我的能力值。
   - title: 演算法大小事
     details: 數學系畢業的我，對演算法有著蠻高的興趣，會以新增有趣題目的方式並以javascript實作出來。若有更好的解法，歡迎高手留言互相討論喔。
   - title: 關於主題
