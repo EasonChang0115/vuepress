@@ -9,7 +9,7 @@
   "license": "MIT",
   "description": "建立技術部落格專案 使用 vue press",
   "dependencies": {
-    "@vuepress/plugin-google-analytics": "^1.0.0-alpha.0",
+    "@centerforopenscience/markdown-it-video": "^1.0.0",
     "@vssue/api-bitbucket-v2": "^1.4.7",
     "@vssue/api-gitee-v5": "^1.4.7",
     "@vssue/api-github-v3": "^1.4.7",
@@ -17,6 +17,7 @@
     "@vssue/api-gitlab-v4": "^1.4.7",
     "@vue/composition-api": "^1.0.0-beta.24",
     "@vuepress/plugin-blog": "^1.9.3",
+    "@vuepress/plugin-google-analytics": "^1.0.0-alpha.0",
     "docsearch.js": "^2.6.3",
     "md5": "^2.3.0",
     "valine": "^1.4.14",
@@ -24,8 +25,8 @@
     "vue-class-component": "^7.2.6",
     "vue-click-outside": "^1.1.0",
     "vue-property-decorator": "^9.1.2",
-    "vuepress-plugin-smooth-scroll": "0.0.10",
-    "vuepress": "1.7.1"
+    "vuepress": "1.7.1",
+    "vuepress-plugin-smooth-scroll": "0.0.10"
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.3.0"
