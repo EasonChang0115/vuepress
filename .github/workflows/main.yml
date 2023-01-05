@@ -31,7 +31,7 @@ jobs:
 
       - name: push
         run:  |
-          echo ${{secrets.GITHUB_TOKEN}} | sudo -S chown -R $USER:$USER $PUBLISH_DIR
+          echo ${{secrets.GITHUB_TOKEN}} | sudo -S chown -R $USER:$USER .vuepress/dist
           cd .vuepress/dist
           git init
           git config --global user.email "s8710606@gmail.com"
