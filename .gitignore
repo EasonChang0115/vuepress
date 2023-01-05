@@ -3,4 +3,3 @@ yarn.lock
 yarn.error
 */.DS_Store
 **/.DS_Store
-.vuepress/dist
