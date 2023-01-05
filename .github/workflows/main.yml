@@ -12,9 +12,8 @@ jobs:
   build:
     name: Code Lint & Test Build
     env:
-      MY_SECRET   : ${{secrets.commit_secret}}
-      PUBLISH_DIR : .vuepress/dist
-    
+      MY_SECRET   : ${{secrets.GITHUB_TOKEN}}
+
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -32,5 +31,15 @@ jobs:
 
       - name: push
         run:  |
-          chmod u+x deploy.sh
-          bash ./deploy.sh
+          echo ${{secrets.GITHUB_TOKEN}} | sudo -S chown -R $USER:$USER $PUBLISH_DIR
+          cd .vuepress/dist
+          git init
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git status
+          git remote add origin https://${MY_SECRET}@github.com/EasonChang0115/EasonChang0115.github.io.git
+          git checkout -b gh-pages
+          git add --all
+          git commit -m "deploy to Github pages"
+          git push origin master -f
+
