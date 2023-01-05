@@ -1,0 +1,53 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy gh-pages
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    name: Code Lint & Test Build
+    env:
+      MY_SECRET   : ${{secrets.commit_secret}}
+      PUBLISH_DIR : .vuepress/dist
+    
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.11.0]
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+
+      - name: Install dependencies 👨🏻‍💻
+        run: npm install
+
+      - name: test build front end project 👨🏻‍💻
+        run: npm run build
+
+      - name: Commit files
+        run: |
+          echo ${{secrets.DEPLOY_PASSWORD}} | sudo -S chown -R $USER:$USER $PUBLISH_DIR
+          cd $PUBLISH_DIR
+          git init
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git status
+          git remote add origin https://$MY_SECRET@github.com/$GITHUB_REPOSITORY.git
+          git checkout -b gh-pages
+          git add --all
+          git commit -m "deploy to Github pages"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: 'gh-pages'
+          force: true
+          directory: '.vuepress/dist'
+
