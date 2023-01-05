@@ -32,13 +32,13 @@ jobs:
 
       - name: Commit files
         run: |
-          echo ${{secrets.DEPLOY_PASSWORD}} | sudo -S chown -R $USER:$USER $PUBLISH_DIR
+          sudo -S chown -R $USER:$USER $PUBLISH_DIR
           cd $PUBLISH_DIR
           git init
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "s8710606@gmail.com"
+          git config --local user.name "EasonChang"
           git status
-          git remote add origin https://$MY_SECRET@github.com/$GITHUB_REPOSITORY.git
+          git remote add origin https://$MY_SECRET@github.com/EasonChang0115/EasonChang0115.github.io.git
           git checkout -b gh-pages
           git add --all
           git commit -m "deploy to Github pages"
