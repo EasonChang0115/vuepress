@@ -38,7 +38,7 @@ jobs:
           git config --global user.name "EasonChang0115"
           git status
           git remote add origin https://${MY_SECRET}@github.com/EasonChang0115/EasonChang0115.github.io.git
-          git checkout -b gh-pages
+          git checkout master
           git add --all
           git commit -m "deploy to Github pages"
 
@@ -46,7 +46,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: 'gh-pages'
+          branch: 'master'
           force: true
           directory: '.vuepress/dist'
 
