@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - lts/*
+  - v16.11.0
 install:
   - npm install
   - npm run build
@@ -11,3 +11,5 @@ cache:
   directories:
     - node_modules
 branch: master
+
+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
