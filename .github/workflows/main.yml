@@ -30,6 +30,7 @@ jobs:
       - name: test build front end project 👨🏻‍💻
         run: npm run build
 
-      - name: Commit files
-        run: ./deploy.sh
-        shell: bash
+      - name: push
+        run:  |
+          chmod u+x deploy.sh
+          bash ./deploy.sh
