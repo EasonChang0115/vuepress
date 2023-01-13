@@ -1,7 +1,7 @@
 {
-  "name": "<Application Name>",
-  "short_name": "<Application Short Name>",
-  "theme_color": "#1976d2",
+  "name": "Hao Lit App",
+  "short_name": "Hao Lit",
+  "theme_color": "#ffffff",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
