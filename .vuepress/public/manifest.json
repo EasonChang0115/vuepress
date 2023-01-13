@@ -1,8 +1,8 @@
 {
   "name": "Hao Lit App",
   "short_name": "Hao Lit",
-  "theme_color": "#ffffff",
-  "background_color": "#fafafa",
+  "theme_color": "#181818",
+  "background_color": "#181818",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
