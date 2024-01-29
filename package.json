@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "EasonChang",
   "scripts": {
-    "dev": "vuepress dev . --open --host \"localhost\"",
+    "dev": "vuepress dev",
     "build": "vuepress build"
   },
   "license": "MIT",
